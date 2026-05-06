@@ -307,60 +307,16 @@ It intentionally does NOT expose:
 - authority mechanics
 - protected survivability architecture
 
----
-
-# 📸 Suggested Screenshots
-
-Capture:
-
-```txt
-1. FRAGILE_RECOVERY_POSTURE
-2. Drop File Here
-3. Recovery Intelligence Output
-4. Manifest View
-5. Meaning View
-6. Rust CLI Output
-```
-
-Store:
-
-```txt
-assets/screenshots/
-```
 
 ---
 
-# 🌍 Suggested GitHub Description
-
-```txt
-XPADI ProofCheck™ — Recovery Intelligence & Survivability Proof.
-```
-
----
-
-# 🏷 Suggested GitHub Topics
-
-```txt
-xpadi
-survivability
-recovery-intelligence
-rust
-local-first
-continuity
-proof-engine
-cybersecurity
-deeptech
-```
-
----
-
-# 📦 Suggested Release
+# 📦 Current Release
 
 ```txt
 v0.3.0
 ```
 
-Release title:
+## Release title:
 
 ```txt
 XPADI ProofCheck™ v0.3.0 — Recovery Intelligence & Survivability Proof
@@ -384,18 +340,6 @@ Local-first survivability intelligence artifact
 
 ✅ Correct Hook:
 
-```txt
-Checksums prove change.
-XPADI ProofCheck asks whether data is structurally ready to survive failure.
-```
-
-❌ Avoid:
-
-```txt
-military-grade AI platform
-ultimate cyber system
-guaranteed recovery engine
-```
 
 ---
 
@@ -415,7 +359,7 @@ Storage → Recovery Readiness
 
 ---
 
-# 🚧 Current Maturity
+# 🚧 Current XPADI State
 
 XPADI ProofCheck™ should currently be understood as:
 
