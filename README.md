@@ -1,113 +1,56 @@
-<p align="center">
-  <img src="assets/xpadi-proofcheck-banner.svg" width="100%" alt="XPADI ProofCheck™ — Recovery Intelligence & Survivability Proof" />
-</p>
+# XPADI ProofCheck™
 
-<h1 align="center">XPADI ProofCheck™</h1>
+Recovery Intelligence & Survivability Proof
 
-<p align="center">
-  <strong>Recovery Intelligence & Survivability Proof</strong>
-</p>
-
-<p align="center">
-  Checksums prove change.<br/>
-  <strong>XPADI ProofCheck asks whether data is structurally ready to survive failure.</strong>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/status-public--signal--artifact-2563eb?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/core-Rust-f97316?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/web-local--browser--demo-38bdf8?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/mode-local--safe--analysis-22c55e?style=for-the-badge" />
-</p>
+Checksums prove change.  
+XPADI ProofCheck asks whether data is structurally ready to survive failure.
 
 ---
 
-# What Is XPADI ProofCheck™?
+## What Is XPADI ProofCheck™
 
-XPADI ProofCheck™ is a **local-first survivability intelligence artifact**.
+XPADI ProofCheck™ is a local-first survivability intelligence artifact.
 
-It is designed to ask a different question from traditional tools:
+It explores a different question from traditional systems:
 
-> **If failure happens tomorrow — is recovery structurally believable?**
+> If failure happens tomorrow — is recovery structurally believable?
 
-Most systems check whether a file exists, was copied, or changed.  
-XPADI ProofCheck™ explores whether the data has a **survivability posture**.
+Most tools verify whether a file changed.
 
-This is not a full recovery engine.  
-This is not backup software.  
-This is not antivirus.
-
-It is a public-safe proof surface for a bigger idea:
-
-> **Recovery should become measurable before failure happens.**
+XPADI ProofCheck™ explores whether recovery itself appears operationally survivable.
 
 ---
 
-# Why This Matters
+## Core Shift
 
-Backups can exist and still fail operationally.
-
-A file may be copied.  
-A checksum may be valid.  
-A cloud account may show data is present.
-
-But recovery can still become fragile if:
-
-- all continuity depends on one account
-- all backup paths depend on one location
-- recovery assumptions are not tested
-- corruption spreads silently
-- deletion removes the only usable path
-- recovery friction becomes too high during a real event
-
-XPADI ProofCheck™ introduces a simple but uncomfortable question:
-
-> **Can your data survive failure, or does it only appear safe?**
+| Traditional System | Main Question |
+|---|---|
+| Checksum | Did the file change? |
+| Backup | Was the file copied? |
+| Cloud Sync | Is the file accessible? |
+| RAID | Is redundancy available? |
+| XPADI ProofCheck™ | Is recovery structurally believable? |
 
 ---
 
-# Traditional Systems vs XPADI ProofCheck™
-
-| Traditional System | Main Question | XPADI ProofCheck™ Question |
-|---|---|---|
-| Checksum | Did the file change? | Is recovery structurally believable? |
-| Backup | Was the file copied? | Can continuity survive failure? |
-| Cloud Sync | Is the file accessible? | Is survivability concentrated? |
-| RAID | Is redundancy available? | Is recovery posture strong or fragile? |
-| Security Tool | Was access blocked? | What survives after failure? |
-
----
-
-# Core Output
-
-XPADI ProofCheck™ produces a public-safe survivability report.
-
-Example:
+## Example Output
 
 ```txt
 XPADI ProofCheck™
 
 Recovery Intelligence & Survivability Proof
 
-SURVIVABILITY POSTURE
-
 Recovery Readiness      19%   CRITICAL
 Continuity Confidence   25%   LOW
 Failure Exposure        HIGH
 Recovery Friction       HIGH
-
-RECOVERY INTELLIGENCE
-
-⚠ Single Point Dependency detected
-⚠ Structural survivability concentration observed
-⚠ Recovery pathway confidence reduced
 
 STATE: FRAGILE_RECOVERY_POSTURE
 ```
 
 ---
 
-# Human Meaning
+## Human Meaning
 
 When XPADI ProofCheck™ says:
 
@@ -117,7 +60,7 @@ FRAGILE_RECOVERY_POSTURE
 
 It means:
 
-> The data may exist, but recovery confidence appears structurally weak under failure conditions.
+> Recovery exists, but continuity confidence appears structurally weak.
 
 Simple example:
 
@@ -130,141 +73,67 @@ Recovery posture fragile.
 
 ---
 
-# Key Terms
-
-| Term | Simple Meaning |
-|---|---|
-| Recovery Readiness | How prepared the data appears for recovery |
-| Survivability Posture | Overall structural recovery condition |
-| Continuity Confidence | Confidence that recoverability can remain intact |
-| Failure Exposure | How fragile recovery becomes under dependency failure |
-| Recovery Friction | Operational difficulty of restoring continuity |
-| Survivability Diversity | Spread and flexibility of recovery paths |
-| Manifest Intelligence | Proof metadata rendered as operational telemetry |
-
----
-
-# Project Structure
+## Project Structure
 
 ```txt
 xpadi-proofcheck/
 │
 ├── engine-rust/
-│   └── Rust CLI proof engine
-│
 ├── api-node/
-│   └── Local Node API / surface server
-│
 ├── web-demo/
-│   └── Browser-based local file demo
-│
 ├── surface-report/
-│   └── Narrative report surface
-│
 ├── assets/
-│   └── SVG banners and launch visuals
-│
 ├── docs/
-│   └── launch notes, scoring notes, positioning
-│
 ├── proof-output/
-│   └── sample manifest and proof report
-│
 └── README.md
 ```
 
 ---
 
-# Requirements
+## Install Rust
 
-You need:
-
-## 1. Rust
-
-Download and install Rust:
+Download:
 
 ```txt
 https://rustup.rs
 ```
 
-After install, verify:
+Verify:
 
 ```bash
 rustc --version
 cargo --version
 ```
 
-Expected:
-
-```txt
-rustc 1.x.x
-cargo 1.x.x
-```
-
 ---
 
-## 2. Node.js
+## Install Node.js
 
-Download and install Node.js LTS:
+Download:
 
 ```txt
 https://nodejs.org
 ```
 
-After install, verify:
+Verify:
 
 ```bash
 node -v
 npm -v
 ```
 
-Expected:
-
-```txt
-v20.x or later
-npm 10.x or later
-```
-
 ---
 
-# How to Run
-
-## Option 1 — Test the Rust CLI
-
-Open terminal inside the repo:
+## Run Rust Engine
 
 ```bash
 cd engine-rust
-cargo run
-```
-
-This runs the local proof engine demo.
-
-If your engine supports file input, use:
-
-```bash
 cargo run -- proof ../README.md
-```
-
-Expected result:
-
-```txt
-XPADI ProofCheck™
-
-Recovery Intelligence & Survivability Proof
-
-SURVIVABILITY POSTURE
-Recovery Readiness      19%   CRITICAL
-Continuity Confidence   25%   LOW
-Failure Exposure        HIGH
-Recovery Friction       HIGH
 ```
 
 ---
 
-## Option 2 — Run the Node Surface Server
-
-Open terminal:
+## Run Surface Report
 
 ```bash
 cd api-node
@@ -272,50 +141,47 @@ npm install
 npm start
 ```
 
-Then open:
+Open:
 
 ```txt
 http://localhost:8787/surface-report/
 ```
 
-This opens the narrative report surface.
-
 ---
 
-## Option 3 — Run the Browser Demo
+## Run Browser Demo
 
-Open this file directly in browser:
+Open:
 
 ```txt
 web-demo/index.html
 ```
 
-Or use VS Code Live Server.
-
-The browser demo supports:
+Supports:
 
 - Select File
 - Drop File
-- local analysis surface
-- report tab
-- manifest tab
-- meaning tab
+- Recovery Report
+- Manifest View
+- Meaning View
+
+Runs locally.
 
 No upload required.
 
-Everything runs locally in the browser.
-
 ---
 
-# Browser Demo Flow
+## Browser Demo Flow
 
-## Step 1 — Open Demo
+### Step 1
+
+Open:
 
 ```txt
 web-demo/index.html
 ```
 
-## Step 2 — Select or Drop File
+### Step 2
 
 Use:
 
@@ -323,15 +189,15 @@ Use:
 Select File
 ```
 
-or drag a file into:
+or:
 
 ```txt
 Drop File Here
 ```
 
-## Step 3 — View Result
+### Step 3
 
-The demo shows:
+View:
 
 - Recovery Readiness
 - Continuity Confidence
@@ -339,173 +205,89 @@ The demo shows:
 - Recovery Friction
 - Survivability Posture
 
-## Step 4 — Check Tabs
+---
 
-Use:
+## Key Terms
 
-```txt
-Report
-Manifest
-Meaning
-```
-
-### Report
-Shows operational output.
-
-### Manifest
-Shows public-safe proof metadata.
-
-### Meaning
-Explains the result in simple language.
+| Term | Meaning |
+|---|---|
+| Recovery Readiness | Preparedness for recovery |
+| Survivability Posture | Overall recovery condition |
+| Continuity Confidence | Confidence in continuity |
+| Failure Exposure | Fragility under dependency failure |
+| Recovery Friction | Difficulty restoring continuity |
 
 ---
 
-# What “Local-First” Means
+## Public-Safe Boundary
 
-XPADI ProofCheck™ is designed as a local-first artifact.
-
-That means:
-
-- no login
-- no cloud upload
-- no account
-- no remote dependency
-- no server-side file storage
-
-The visible demo runs locally.
-
----
-
-# What This Is NOT
-
-XPADI ProofCheck™ is not:
-
-- backup software
-- cloud storage
-- antivirus
-- ransomware decryptor
-- EDR
-- SIEM
-- full XPADI recovery engine
-- guaranteed restoration system
-
-It does not claim to restore data.
-
-It evaluates survivability posture.
-
----
-
-# Public-Safe Boundary
-
-The visible project intentionally exposes only:
+This public repo intentionally exposes only:
 
 - survivability telemetry
-- public-safe manifest structure
+- recovery posture reasoning
 - local proof surface
-- reasoning output
-- recovery posture language
+- continuity visibility
 
-It intentionally does not expose:
+It intentionally does NOT expose:
 
-- XPADI recovery internals
-- reconstruction logic
-- authority mechanics
-- private survivability architecture
-- future system-level enforcement layers
-
-This repo is the visible edge, not the full core.
+- recovery internals
+- reconstruction systems
+- authority systems
+- protected survivability architecture
 
 ---
 
-# Why It Looks Different
+## Suggested Screenshots
 
-XPADI ProofCheck™ is built to feel like:
-
-```txt
-future infrastructure telemetry
-```
-
-not:
+Capture:
 
 ```txt
-another checksum utility
+1. FRAGILE_RECOVERY_POSTURE
+2. Drop File Here
+3. Recovery Intelligence
+4. Manifest View
+5. Meaning View
+6. Rust CLI Output
 ```
 
-The surface includes:
-
-- operational posture
-- recovery intelligence
-- continuity confidence
-- survivability reasoning
-- manifest intelligence
-- human result mode
-
-The goal is not just to show data.
-
-The goal is to create a new question.
-
----
-
-# Demo Screenshots to Capture
-
-Before public release, capture:
-
-```txt
-1. FRAGILE_RECOVERY_POSTURE hero
-2. Drop File Here surface
-3. Recovery Intelligence output
-4. Manifest tab
-5. Meaning tab
-6. Rust CLI terminal output
-```
-
-Put screenshots here:
+Store:
 
 ```txt
 assets/screenshots/
 ```
 
-Then update README image links if needed.
-
 ---
 
-# Suggested GitHub Description
-
-Use this for the GitHub repo description:
+## Suggested GitHub Description
 
 ```txt
-XPADI ProofCheck™ — Recovery Intelligence & Survivability Proof. A local-first survivability intelligence artifact exploring whether recovery itself can become measurable before failure happens.
+XPADI ProofCheck™ — Recovery Intelligence & Survivability Proof.
 ```
 
 ---
 
-# Suggested GitHub Topics
+## Suggested GitHub Topics
 
 ```txt
 xpadi
-recovery-intelligence
 survivability
-data-resilience
-cybersecurity
+recovery-intelligence
 rust
-blake3
 local-first
-deeptech
 continuity
 proof-engine
+cybersecurity
 ```
 
 ---
 
-# Release Tag
-
-Suggested version:
+## Suggested Release
 
 ```txt
 v0.3.0
 ```
 
-Suggested release title:
+Release Title:
 
 ```txt
 XPADI ProofCheck™ v0.3.0 — Recovery Intelligence & Survivability Proof
@@ -513,21 +295,21 @@ XPADI ProofCheck™ v0.3.0 — Recovery Intelligence & Survivability Proof
 
 ---
 
-# Launch Positioning
+## Correct Positioning
 
-Correct public positioning:
-
-```txt
-A local-first survivability intelligence artifact.
-```
-
-Correct category:
+Correct:
 
 ```txt
-Recovery Intelligence & Survivability Proof.
+Recovery Intelligence & Survivability Proof
 ```
 
-Correct hook:
+Correct:
+
+```txt
+Local-first survivability intelligence artifact
+```
+
+Correct Hook:
 
 ```txt
 Checksums prove change.
@@ -537,61 +319,86 @@ XPADI ProofCheck asks whether data is structurally ready to survive failure.
 Avoid:
 
 ```txt
-revolutionary cyber platform
+military-grade AI platform
 guaranteed recovery engine
-AI-powered universal protection system
-military-grade recovery
+ultimate cyber system
 ```
-
-Credibility matters more than hype.
 
 ---
 
-# Core Philosophy
+## Core Philosophy
 
 Most tools measure whether data changed.
 
-XPADI ProofCheck™ explores whether recovery itself is structurally believable.
+XPADI ProofCheck™ explores whether recovery itself appears structurally believable.
 
-That is the shift:
+Shift:
 
 ```txt
 Integrity → Survivability
 Backup → Continuity
 Storage → Recovery Readiness
-File proof → Survivability Posture
 ```
 
 ---
 
-# Current Maturity
+## Current Maturity
 
-XPADI ProofCheck™ is currently best understood as:
+XPADI ProofCheck™ should currently be understood as:
 
 ```txt
-a public signal artifact
+a public survivability intelligence signal artifact
 ```
 
 It is intentionally:
 
-- small
 - local-first
-- public-safe
-- technical
 - visual
+- technical
+- public-safe
 - category-oriented
 
-It is not yet positioned as a full commercial platform.
-
-That restraint is intentional.
-
 ---
 
-## Built as a lightweight public survivability intelligence surface inspired by the broader XPADI survivability research direction.
----
-
-# Final Question
+## Final Question
 
 > Can recovery itself become measurable before failure happens?
 
 That is the question behind XPADI ProofCheck™.
+
+---
+
+# 👤 Author
+
+Raaj Mandale  
+Founder — Eranest Technoware
+
+Research:
+
+- M-OS
+- XPADI
+- UNI-OS
+- QBAIX
+
+GitHub:
+
+https://github.com/raajmandale
+
+---
+
+# ✔ PRC Status
+
+- PRC-1 Reactor Surface
+- Demo Proof Loop
+- Benchmark Layer
+- Packaging Brief
+
+Next:
+
+- PRC-3 → Repeatability Trials
+
+---
+
+# License
+
+MIT
