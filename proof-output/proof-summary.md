@@ -1,0 +1,3 @@
+# XPADI Proof Summary
+
+FRAGILE_RECOVERY_POSTURE

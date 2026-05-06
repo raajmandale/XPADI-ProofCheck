@@ -1,0 +1,15 @@
+{
+  "name": "XPADI ProofCheck\u2122",
+  "version": "0.3.0",
+  "codename": "PHASE-3-POLISH-PACK",
+  "tagline": "Recovery Intelligence & Survivability Proof",
+  "release_date": "2026-05-06T17:52:44.736853",
+  "visibility": "public-safe",
+  "mode": "local-first",
+  "core_stack": [
+    "Rust",
+    "Node.js",
+    "BLAKE3"
+  ],
+  "doctrine": "Brain \u2192 Terminal \u2192 Surface"
+}

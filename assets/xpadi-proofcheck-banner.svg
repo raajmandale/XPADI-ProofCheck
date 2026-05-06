@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-label="XPADI ProofCheck Recovery Intelligence and Survivability Proof banner">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="16%" r="80%">
+      <stop offset="0%" stop-color="#183a5a"/>
+      <stop offset="45%" stop-color="#08111f"/>
+      <stop offset="100%" stop-color="#02050a"/>
+    </radialGradient>
+
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7dd3fc">
+        <animate attributeName="stop-color" values="#7dd3fc;#38bdf8;#7dd3fc" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#f8fafc">
+        <animate attributeName="stop-color" values="#f8fafc;#bae6fd;#f8fafc" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#ff6b6b"/>
+    </linearGradient>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="deepShadow">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#24435f" stroke-width="1" opacity="0.28"/>
+    </pattern>
+
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="520" fill="url(#bgGlow)"/>
+  <rect width="1600" height="520" fill="url(#grid)" opacity="0.65"/>
+
+  <g opacity="0.36">
+    <circle cx="1265" cy="235" r="195" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="1265" cy="235" r="120" fill="none" stroke="#fb7185" stroke-width="2"/>
+    <circle cx="1265" cy="235" r="52" fill="none" stroke="#7dd3fc" stroke-width="2"/>
+    <line x1="1050" y1="235" x2="1480" y2="235" stroke="#7dd3fc" stroke-width="2"/>
+    <line x1="1265" y1="25" x2="1265" y2="445" stroke="#fb923c" stroke-width="2" opacity="0.55"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 1265 235" to="360 1265 235" dur="36s" repeatCount="indefinite"/>
+  </g>
+
+  <g opacity="0.45">
+    <path d="M920 105 C1030 82, 1108 126, 1200 105 S1390 70, 1500 105" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M920 365 C1030 388, 1108 344, 1200 365 S1390 400, 1500 365" fill="none" stroke="#fb7185" stroke-width="2"/>
+  </g>
+
+  <rect x="-420" y="0" width="340" height="520" fill="url(#scanGrad)" opacity="0.22">
+    <animate attributeName="x" values="-420;1680" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <g filter="url(#deepShadow)">
+    <rect x="70" y="72" width="845" height="365" rx="34" fill="#0b1423" opacity="0.78" stroke="#24435f"/>
+  </g>
+
+  <text x="105" y="132" fill="#7dd3fc" font-family="Segoe UI, Arial, sans-serif" font-size="20" letter-spacing="7" font-weight="800">
+    XPADI PROOFCHECK™
+  </text>
+
+  <text x="105" y="218" fill="url(#titleGrad)" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="900" filter="url(#softGlow)">
+    Recovery Intelligence
+  </text>
+
+  <text x="105" y="288" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="900">
+    &amp; Survivability Proof
+  </text>
+
+  <text x="108" y="350" fill="#a8cfe6" font-family="Segoe UI, Arial, sans-serif" font-size="24">
+    Checksums prove change. ProofCheck asks whether data is structurally ready to survive failure.
+  </text>
+
+  <g>
+    <rect x="105" y="385" width="545" height="58" rx="18" fill="#111827" stroke="#fb7185" opacity="0.95"/>
+    <text x="132" y="422" fill="url(#redGrad)" font-family="Consolas, monospace" font-size="25" font-weight="800">
+      FRAGILE_RECOVERY_POSTURE
+    </text>
+    <animate attributeName="opacity" values="0.88;1;0.88" dur="3s" repeatCount="indefinite"/>
+  </g>
+
+  <text x="1010" y="472" fill="#7dd3fc" font-family="Consolas, monospace" font-size="18" opacity="0.88">
+    LOCAL_SAFE_ANALYSIS • BLAKE3 • SURVIVABILITY TELEMETRY
+  </text>
+</svg>

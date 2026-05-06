@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="XPADI ProofCheck social preview">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="12%" r="85%">
+      <stop offset="0%" stop-color="#183a5a"/>
+      <stop offset="55%" stop-color="#08111f"/>
+      <stop offset="100%" stop-color="#02050a"/>
+    </radialGradient>
+    <linearGradient id="cold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#24435f" stroke-width="1" opacity="0.28" fill="none"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="66" y="62" width="1068" height="506" rx="38" fill="#0b1423" opacity="0.82" stroke="#24435f"/>
+
+  <g opacity="0.42">
+    <circle cx="940" cy="315" r="130" stroke="#38bdf8" stroke-width="3" fill="none"/>
+    <circle cx="940" cy="315" r="72" stroke="#fb7185" stroke-width="3" fill="none"/>
+    <line x1="790" y1="315" x2="1090" y2="315" stroke="#7dd3fc" stroke-width="2"/>
+    <line x1="940" y1="165" x2="940" y2="465" stroke="#fb923c" stroke-width="2" opacity="0.55"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 940 315" to="360 940 315" dur="34s" repeatCount="indefinite"/>
+  </g>
+
+  <text x="105" y="145" fill="#7dd3fc" font-family="Segoe UI, Arial, sans-serif" font-size="22" letter-spacing="7" font-weight="800">
+    XPADI PROOFCHECK™
+  </text>
+
+  <text x="105" y="240" fill="url(#cold)" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="900" filter="url(#glow)">
+    Recovery Intelligence
+  </text>
+
+  <text x="105" y="315" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="900">
+    &amp; Survivability Proof
+  </text>
+
+  <text x="105" y="386" fill="#a8cfe6" font-family="Segoe UI, Arial, sans-serif" font-size="27">
+    Can recovery itself become measurable before failure happens?
+  </text>
+
+  <rect x="105" y="450" width="520" height="64" rx="18" fill="#111827" stroke="#fb7185"/>
+  <text x="132" y="492" fill="#ff7373" font-family="Consolas, monospace" font-size="27" font-weight="900">
+    FRAGILE_RECOVERY_POSTURE
+  </text>
+</svg>

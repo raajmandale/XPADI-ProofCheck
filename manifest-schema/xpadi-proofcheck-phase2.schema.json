@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "XPADI ProofCheck PHASE-2 Manifest",
+  "type": "object",
+  "required": [
+    "proof_version",
+    "proof_id",
+    "created_at",
+    "subject",
+    "integrity",
+    "survivability"
+  ],
+  "properties": {
+    "proof_version": {
+      "type": "string"
+    },
+    "proof_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "object"
+    },
+    "integrity": {
+      "type": "object"
+    },
+    "survivability": {
+      "type": "object"
+    },
+    "fragment_profile": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>XPADI ProofCheck™ — Visual Intelligence Layer</title>
+
+<style>
+:root{
+  --bg:#f4f8fc;
+  --panel:#ffffff;
+  --line:#d8e7f4;
+  --blue:#2563eb;
+  --blue2:#38bdf8;
+  --orange:#fb923c;
+  --red:#ff5f5f;
+  --green:#22c55e;
+  --text:#08111f;
+  --muted:#60738a;
+  --dark:#07111f;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:
+    radial-gradient(circle at top left,#dbeafe 0%,transparent 30%),
+    radial-gradient(circle at top right,#ffedd5 0%,transparent 27%),
+    var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(37,99,235,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,.045) 1px, transparent 1px);
+  background-size:42px 42px;
+}
+
+.shell{
+  width:min(1440px,94vw);
+  margin:auto;
+  padding:36px 0 80px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:26px;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:950;
+  color:var(--blue);
+  letter-spacing:.4px;
+}
+
+.mode{
+  padding:10px 16px;
+  border-radius:999px;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:var(--blue);
+  font-weight:800;
+  font-size:13px;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(37,99,235,.12);
+  border-radius:34px;
+  padding:54px;
+  box-shadow:0 30px 80px rgba(37,99,235,.08),0 10px 30px rgba(251,146,60,.07);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:620px;height:620px;
+  right:-210px;top:-260px;
+  border-radius:50%;
+  background:radial-gradient(circle,#38bdf824,transparent 70%);
+}
+
+.kicker{
+  color:var(--blue2);
+  font-weight:950;
+  letter-spacing:6px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(54px,7vw,96px);
+  line-height:.93;
+  letter-spacing:-4px;
+}
+
+.sub{
+  margin-top:24px;
+  color:var(--muted);
+  max-width:900px;
+  font-size:24px;
+  line-height:1.65;
+}
+
+.actions{
+  margin-top:34px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.actions button{
+  border:0;
+  cursor:pointer;
+  padding:17px 32px;
+  border-radius:18px;
+  font-size:18px;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--blue2),var(--orange));
+  color:#06111f;
+  box-shadow:0 14px 34px rgba(37,99,235,.18);
+  transition:.25s;
+}
+
+.actions button:hover{transform:translateY(-4px)}
+.actions span{font-size:18px;color:var(--muted)}
+
+.workspace{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:1.05fr 1.2fr;
+  gap:24px;
+}
+
+.drop{
+  min-height:650px;
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:32px;
+  padding:34px;
+  box-shadow:0 22px 44px rgba(37,99,235,.055);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.drop::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:2px dashed rgba(37,99,235,.18);
+  border-radius:26px;
+  pointer-events:none;
+}
+
+.drop.hot{
+  border-color:var(--blue2);
+  box-shadow:0 0 0 6px rgba(56,189,248,.12),0 22px 44px rgba(37,99,235,.08);
+}
+
+.drop-center{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  margin:auto 0;
+}
+
+.orb{
+  width:150px;height:150px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 35% 30%,#ffffff 0%,#9be7ff 14%,#38bdf8 42%,#fb923c 78%);
+  box-shadow:0 0 55px rgba(56,189,248,.34),0 0 28px rgba(251,146,60,.22);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:54px;
+  color:white;
+  animation:orbPulse 4s ease-in-out infinite;
+}
+
+@keyframes orbPulse{
+  0%,100%{transform:scale(1);filter:saturate(1)}
+  50%{transform:scale(1.055);filter:saturate(1.18)}
+}
+
+.drop h2{
+  margin-top:30px;
+  font-size:54px;
+  letter-spacing:-2px;
+  font-weight:950;
+}
+
+.drop p{
+  margin-top:18px;
+  max-width:520px;
+  color:var(--muted);
+  font-size:20px;
+  line-height:1.65;
+}
+
+.visual{
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:32px;
+  padding:28px;
+  box-shadow:0 22px 44px rgba(37,99,235,.055);
+}
+
+.visual-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.ring-card,.topology,.human,.console-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:26px;
+}
+
+.ring-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:310px;
+}
+
+.ring{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:
+    conic-gradient(var(--red) 0deg 68deg,#e5eef8 68deg 360deg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 40px rgba(255,95,95,.16);
+  position:relative;
+}
+
+.ring::after{
+  content:"";
+  position:absolute;
+  width:158px;height:158px;
+  border-radius:50%;
+  background:white;
+}
+
+.ring-inner{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.ring-inner strong{
+  display:block;
+  font-size:50px;
+  color:var(--red);
+  font-weight:950;
+}
+
+.ring-inner span{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+.posture{
+  margin-top:20px;
+  color:var(--red);
+  font-family:Consolas,monospace;
+  font-size:21px;
+  font-weight:950;
+}
+
+.topology{
+  min-height:310px;
+  position:relative;
+  overflow:hidden;
+}
+
+.topology h3,.human h3,.console-card h3{
+  color:var(--blue);
+  letter-spacing:1.8px;
+  font-size:18px;
+  margin-bottom:18px;
+}
+
+.nodes{
+  height:230px;
+  position:relative;
+}
+
+.node{
+  position:absolute;
+  width:54px;height:54px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--blue2),var(--orange));
+  box-shadow:0 0 24px rgba(56,189,248,.28);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:900;
+}
+
+.node.core{left:50%;top:45%;transform:translate(-50%,-50%);width:74px;height:74px;background:linear-gradient(135deg,var(--red),var(--orange))}
+.node.a{left:12%;top:20%}
+.node.b{right:10%;top:22%}
+.node.c{left:18%;bottom:15%}
+.node.d{right:18%;bottom:12%}
+
+.line{
+  position:absolute;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue2),transparent);
+  opacity:.55;
+  transform-origin:left;
+}
+
+.l1{left:31%;top:35%;width:160px;transform:rotate(20deg)}
+.l2{right:26%;top:36%;width:160px;transform:rotate(-20deg)}
+.l3{left:32%;bottom:31%;width:150px;transform:rotate(-20deg)}
+.l4{right:30%;bottom:29%;width:140px;transform:rotate(20deg)}
+
+.human{
+  margin-top:18px;
+}
+
+.human p{
+  color:var(--muted);
+  font-size:20px;
+  line-height:1.65;
+}
+
+.console-card{
+  margin-top:18px;
+}
+
+.tabs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+
+.tabs button{
+  border:0;
+  cursor:pointer;
+  padding:12px 20px;
+  border-radius:14px;
+  font-weight:900;
+  background:#edf4fb;
+  color:var(--text);
+}
+
+.tabs button.active{
+  background:linear-gradient(90deg,var(--orange),var(--blue2));
+}
+
+.console{
+  background:#08111f;
+  color:#dbeafe;
+  border-radius:20px;
+  padding:24px;
+  min-height:310px;
+  overflow:auto;
+  border:1px solid #142236;
+}
+
+.console pre{
+  white-space:pre-wrap;
+  font-family:Consolas,monospace;
+  font-size:15px;
+  line-height:1.65;
+}
+
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:18px;
+}
+
+.metric{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:22px;
+}
+
+.metric span{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.metric strong{
+  display:block;
+  margin-top:8px;
+  font-size:30px;
+  font-weight:950;
+}
+
+.red{color:var(--red)}
+.orange{color:var(--orange)}
+.blue{color:var(--blue)}
+
+.footer{
+  margin-top:50px;
+  text-align:center;
+  color:#687c90;
+  font-size:15px;
+}
+
+@media(max-width:1120px){
+  .workspace,.visual-grid,.metrics{grid-template-columns:1fr}
+  .hero{padding:34px}
+  .drop{min-height:470px}
+}
+</style>
+</head>
+
+<body>
+<main class="shell">
+
+  <div class="topbar">
+    <div class="logo">XPADI ProofCheck™</div>
+    <div class="mode">LOCAL_SAFE_ANALYSIS</div>
+  </div>
+
+  <section class="hero">
+    <p class="kicker">VISUAL INTELLIGENCE LAYER</p>
+    <h1>Recovery Intelligence &<br>Survivability Proof</h1>
+    <p class="sub">
+      Checksums prove change. ProofCheck asks whether data is structurally ready to survive failure.
+    </p>
+    <div class="actions">
+      <button id="pick">Select File</button>
+      <span>No upload. Local browser proof.</span>
+    </div>
+    <input id="file" type="file" hidden />
+  </section>
+
+  <section class="workspace">
+
+    <article class="drop" id="drop">
+      <div class="drop-center">
+        <div class="orb">↑</div>
+        <h2>Drop File Here</h2>
+        <p>Generate local survivability telemetry, recovery posture intelligence, and continuity-readiness analysis.</p>
+      </div>
+    </article>
+
+    <article class="visual">
+
+      <div class="visual-grid">
+        <div class="ring-card">
+          <div class="ring">
+            <div class="ring-inner">
+              <strong id="score">19%</strong>
+              <span>RECOVERY READINESS</span>
+            </div>
+          </div>
+          <div class="posture" id="posture">FRAGILE_RECOVERY_POSTURE</div>
+        </div>
+
+        <div class="topology">
+          <h3>CONTINUITY TOPOLOGY</h3>
+          <div class="nodes">
+            <div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div>
+            <div class="node core">!</div>
+            <div class="node a">1</div>
+            <div class="node b">2</div>
+            <div class="node c">3</div>
+            <div class="node d">4</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="human">
+        <h3>HUMAN RESULT MODE</h3>
+        <p id="meaning">
+          Awaiting file. ProofCheck will translate survivability telemetry into a simple operational meaning.
+        </p>
+      </div>
+
+      <div class="console-card">
+        <div class="tabs">
+          <button class="active" onclick="setTab('report')">Report</button>
+          <button onclick="setTab('manifest')">Manifest</button>
+          <button onclick="setTab('meaning')">Meaning</button>
+        </div>
+        <div class="console">
+          <pre id="output">Awaiting file...
+
+XPADI ProofCheck™ ready.
+
+MODE: LOCAL_SAFE_ANALYSIS
+ENGINE: BLAKE3
+STATE: STANDBY</pre>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><span>Recovery</span><strong class="red">19%</strong></div>
+        <div class="metric"><span>Confidence</span><strong class="orange">25%</strong></div>
+        <div class="metric"><span>Exposure</span><strong class="red">HIGH</strong></div>
+        <div class="metric"><span>Mode</span><strong class="blue">LOCAL</strong></div>
+      </div>
+
+    </article>
+
+  </section>
+
+  <div class="footer">XPADI ProofCheck™ — Recovery Intelligence & Survivability Proof</div>
+
+</main>
+
+<script>
+const pick = document.getElementById("pick");
+const file = document.getElementById("file");
+const drop = document.getElementById("drop");
+const output = document.getElementById("output");
+const meaning = document.getElementById("meaning");
+const score = document.getElementById("score");
+const posture = document.getElementById("posture");
+
+let current = {
+  file:"No file",
+  size:"0 KB",
+  report:"Awaiting file...",
+  manifest:"{}",
+  meaning:"Awaiting file."
+};
+
+pick.onclick = () => file.click();
+
+file.addEventListener("change", e => {
+  const f = e.target.files[0];
+  if(f) analyze(f);
+});
+
+drop.addEventListener("dragover", e => {
+  e.preventDefault();
+  drop.classList.add("hot");
+});
+
+drop.addEventListener("dragleave", () => drop.classList.remove("hot"));
+
+drop.addEventListener("drop", e => {
+  e.preventDefault();
+  drop.classList.remove("hot");
+  const f = e.dataTransfer.files[0];
+  if(f) analyze(f);
+});
+
+function analyze(f){
+  const sizeKB = (f.size / 1024).toFixed(2);
+
+  current.file = f.name;
+  current.size = sizeKB + " KB";
+
+  score.textContent = "19%";
+  posture.textContent = "FRAGILE_RECOVERY_POSTURE";
+
+  current.report =
+`XPADI ProofCheck™
+
+Recovery Intelligence & Survivability Proof
+
+FILE ANALYSIS COMPLETE
+
+Subject: ${f.name}
+Size: ${sizeKB} KB
+Mode: LOCAL_SAFE_ANALYSIS
+
+SURVIVABILITY POSTURE
+
+Recovery Readiness      19%   CRITICAL
+Continuity Confidence   25%   LOW
+Failure Exposure        HIGH
+Recovery Friction       HIGH
+
+RECOVERY INTELLIGENCE
+
+⚠ Single Point Dependency detected
+⚠ Recovery pathway confidence reduced
+⚠ Structural survivability concentration observed
+
+SYSTEM INTERPRETATION
+
+This object demonstrates a fragile survivability posture.
+Continuity confidence structurally limited.
+Failure concentration elevated.
+
+ENGINE: BLAKE3
+STATE: FRAGILE_RECOVERY_POSTURE`;
+
+  current.manifest =
+`{
+  "proof_version": "XPADI-PC-WEB-VISUAL",
+  "subject": "${f.name}",
+  "size": "${sizeKB} KB",
+  "mode": "LOCAL_SAFE_ANALYSIS",
+  "recovery_readiness": 19,
+  "continuity_confidence": 25,
+  "failure_exposure": "HIGH",
+  "recovery_friction": "HIGH",
+  "posture": "FRAGILE_RECOVERY_POSTURE"
+}`;
+
+  current.meaning =
+`Your continuity depends on a concentrated recovery path. If this source, account, or storage chain fails, recovery confidence becomes structurally weak.`;
+
+  meaning.textContent = current.meaning;
+  output.textContent = current.report;
+}
+
+function setTab(tab){
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+
+  if(tab === "report") output.textContent = current.report;
+  if(tab === "manifest") output.textContent = current.manifest;
+  if(tab === "meaning") output.textContent = current.meaning;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "xpadi-proofcheck-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XPADI ProofCheck workspace: Rust engine, Node API, local web demo",
+  "scripts": {
+    "api": "cd api-node && npm start",
+    "proof:sample": "cd engine-rust && cargo run -- proof ../examples/sample.txt --out ../reports/sample.xpadi-proof.json",
+    "verify:sample": "cd engine-rust && cargo run -- verify ../examples/sample.txt ../reports/sample.xpadi-proof.json",
+    "start:api": "cd api-node && npm install && npm start"
+  },
+  "phase": "PHASE-2 Recovery Intelligence Surface"
+}
