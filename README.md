@@ -290,7 +290,7 @@ That means:
 
 ---
 
-# 🛡 Public-Safe Boundary
+# 🛡 Public-Safe intention
 
 This public repo intentionally exposes only:
 
@@ -309,12 +309,6 @@ It intentionally does NOT expose:
 
 
 ---
-
-# 📦 Current Release
-
-```txt
-v0.3.0
-```
 
 ## Release title:
 
@@ -338,9 +332,6 @@ Recovery Intelligence & Survivability Proof
 Local-first survivability intelligence artifact
 ```
 
-✅ Correct Hook:
-
-
 ---
 
 # 🧬 Core Philosophy
@@ -357,26 +348,7 @@ Backup → Continuity
 Storage → Recovery Readiness
 ```
 
----
-
-# 🚧 Current XPADI State
-
-XPADI ProofCheck™ should currently be understood as:
-
-```txt
-a public survivability intelligence signal artifact
-```
-
-It is intentionally:
-
-- lightweight
-- visual
-- technical
-- local-first
-- public-safe
-- category-oriented
-
----
+----
 
 # ❓ Final Question
 
