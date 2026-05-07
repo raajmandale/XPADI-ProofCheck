@@ -26,7 +26,7 @@
 
 # 🚨 What Is XPADI ProofCheck™
 
-XPADI ProofCheck™ is a **local-first survivability intelligence artifact**.
+XPADI ProofCheck™ is a local-first survivability intelligence artifact.
 
 It explores a different question from traditional systems:
 
@@ -114,21 +114,79 @@ xpadi-proofcheck/
 
 ---
 
-# 🖼 Visual Surfaces
-
-## 🎨 Main Banner
+# 🎬 Live Demo Surface
 
 <p align="center">
-  <img src="assets/xpadi-proofcheck-banner.svg" width="100%">
+  <img src="assets/XPADI_ProofCheck_Demo.gif" width="100%" alt="XPADI ProofCheck™ Demo"/>
+</p>
+
+<p align="center">
+  <strong>Local-first survivability intelligence workflow</strong>
 </p>
 
 ---
 
-## 🌐 Browser Demo Surface
+# 🖼 Screenshot Surfaces
+
+## 🧠 Recovery Surface
 
 <p align="center">
-  <img src="assets/xpadi-social-preview.svg" width="100%">
+  <img src="assets/screenshots/01_Hero_Recovery_Surface.png" width="100%" alt="Recovery Surface"/>
 </p>
+
+Shows:
+- survivability posture
+- recovery readiness
+- continuity confidence
+- operational recovery intelligence
+
+---
+
+## ⚙ Rust CLI Execution
+
+<p align="center">
+  <img src="assets/screenshots/02_CLI_Engine_Execution.png" width="100%" alt="CLI Engine"/>
+</p>
+
+Local Rust execution surface generating survivability telemetry.
+
+---
+
+## 📊 Recovery Intelligence
+
+<p align="center">
+  <img src="assets/screenshots/03_Recovery_Intelligence.png" width="100%" alt="Recovery Intelligence"/>
+</p>
+
+Operational continuity analysis:
+- recovery posture
+- failure exposure
+- survivability concentration
+- continuity confidence
+
+---
+
+## 🔒 Proof Layer + Public-Safe Surface
+
+<p align="center">
+  <img src="assets/screenshots/04_Proof_Layer_and_PublicSafe.png" width="100%" alt="Proof Layer"/>
+</p>
+
+Demonstrates:
+- local proof generation
+- manifest visibility
+- public-safe telemetry
+- local-first execution philosophy
+
+---
+
+## 🌐 Cyber Report Surface
+
+<p align="center">
+  <img src="assets/screenshots/05_Cyber_Report_Surface.png" width="100%" alt="Cyber Report"/>
+</p>
+
+Browser-based survivability intelligence rendering surface.
 
 ---
 
@@ -186,7 +244,9 @@ Recovery Friction       HIGH
 
 ---
 
-# 🌐 Run Surface Report
+# 🌐 Surface Report
+
+Run:
 
 ```bash
 cd api-node
@@ -202,7 +262,7 @@ http://localhost:8787/surface-report/
 
 ---
 
-# 🖥 Run Browser Demo
+# 🌐 Browser Demo
 
 Open:
 
@@ -290,7 +350,7 @@ That means:
 
 ---
 
-# 🛡 Public-Safe intention
+# 🛡 Public-Safe Intention
 
 This public repo intentionally exposes only:
 
@@ -307,30 +367,13 @@ It intentionally does NOT expose:
 - authority mechanics
 - protected survivability architecture
 
-
----
-
-## Release title:
-
-```txt
-XPADI ProofCheck™ v0.3.0 — Recovery Intelligence & Survivability Proof
-```
-
 ---
 
 # 🎯 Correct Positioning
 
-✅ Correct:
+✅ Recovery Intelligence & Survivability Proof
 
-```txt
-Recovery Intelligence & Survivability Proof
-```
-
-✅ Correct:
-
-```txt
-Local-first survivability intelligence artifact
-```
+✅ Local-first survivability intelligence artifact
 
 ---
 
@@ -348,7 +391,7 @@ Backup → Continuity
 Storage → Recovery Readiness
 ```
 
-----
+---
 
 # ❓ Final Question
 
