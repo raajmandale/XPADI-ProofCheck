@@ -219,7 +219,9 @@ Operational continuity analysis:
 ---
 ## Evidence Intelligence Layer
 
-![Evidence Dashboard](assets/screenshots/06-evidence-dashboard.png)
+<p align="center">
+  <img src="assets/screenshots/06-evidence-dashboard.png" width="100%" alt="Evidence-Dashboard"/>
+</p>
 
 ## 🔒 Proof Layer + Public-Safe Surface
 
