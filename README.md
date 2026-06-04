@@ -23,10 +23,8 @@
 </p>
 
 ---
-
 # 🚨 What Is XPADI ProofCheck™
-
-XPADI ProofCheck™ is a local-first survivability intelligence artifact.
+XPADI ProofCheck™ is a Recovery Intelligence and Survivability Proof surface that evaluates recovery posture before failure occurs.
 
 It explores a different question from traditional systems:
 
@@ -218,8 +216,10 @@ Operational continuity analysis:
 - failure exposure
 - survivability concentration
 - continuity confidence
-
 ---
+## Evidence Intelligence Layer
+
+![Evidence Dashboard](assets/screenshots/06-evidence-dashboard.png)
 
 ## 🔒 Proof Layer + Public-Safe Surface
 
@@ -474,6 +474,17 @@ Storage → Recovery Readiness
 That is the question behind XPADI ProofCheck™.
 
 ---
+# Explore XPADI
+
+ProofCheck is part of a larger survivability and continuity ecosystem.
+
+| Surface | Purpose |
+|----------|----------|
+| XPADI ProofCheck™ | Public Survivability Analysis |
+| XPADI Sentinel Studio™ | Decision Intelligence Surface |
+| XPADI Continuity Console™ | Evidence & Continuity Exploration |
+---
+![XPADI Ecosystem](assets/screenshots/07-Proofcheck_eco.png)
 
 # 👤 Author
 
