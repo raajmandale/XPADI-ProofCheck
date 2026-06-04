@@ -1,0 +1,80 @@
+{
+  "artifact": "XPADI_VALIDATION_ENGINE_V1",
+  "session_id": "TRS-1780596672054",
+  "validation_state": "SAFE",
+  "risk": "LOW",
+  "checks": [
+    {
+      "check": "fileProof",
+      "path": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\proofs\\file-proof.json",
+      "status": "PASS",
+      "reason": "Artifact exists and is readable."
+    },
+    {
+      "check": "continuity",
+      "path": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\continuity\\continuity-session.json",
+      "status": "PASS",
+      "reason": "Artifact exists and is readable."
+    },
+    {
+      "check": "runtimeState",
+      "path": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\intelligence\\runtime-state.json",
+      "status": "PASS",
+      "reason": "Artifact exists and is readable."
+    },
+    {
+      "check": "proofChain",
+      "path": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\intelligence\\proof-chain.json",
+      "status": "PASS",
+      "reason": "Artifact exists and is readable."
+    },
+    {
+      "check": "continuityChain",
+      "path": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\intelligence\\continuity-chain.json",
+      "status": "PASS",
+      "reason": "Artifact exists and is readable."
+    },
+    {
+      "check": "finalReasoningState",
+      "path": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\reasoning\\final-state.json",
+      "status": "PASS",
+      "reason": "Artifact exists and is readable."
+    },
+    {
+      "check": "proof_chain_strength",
+      "status": "PASS",
+      "value": 6,
+      "reason": "Proof chain contains public evidence links."
+    },
+    {
+      "check": "continuity_chain_strength",
+      "status": "PASS",
+      "value": 6,
+      "reason": "Continuity chain contains public continuity links."
+    },
+    {
+      "check": "reasoning_confidence",
+      "status": "PASS",
+      "value": 100,
+      "reason": "Reasoning confidence is strong enough for public demo posture."
+    },
+    {
+      "check": "recoverability_signal",
+      "status": "PASS",
+      "value": 100,
+      "reason": "Recoverability signal is strong enough for public demo posture."
+    }
+  ],
+  "summary": {
+    "total_checks": 10,
+    "pass": 10,
+    "warn": 0,
+    "fail": 0,
+    "proof_chain_count": 6,
+    "continuity_chain_count": 6,
+    "reasoning_confidence": 100,
+    "recoverability_score": 100
+  },
+  "public_boundary": "Validation uses public ProofCheck artifacts only. No XPADI private mechanisms are exposed.",
+  "generated_at": "2026-06-04T18:11:12.154Z"
+}

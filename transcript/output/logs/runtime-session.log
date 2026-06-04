@@ -1,0 +1,11 @@
+TRANSCRIPT_RUNTIME_V3 SESSION
+Session: TRS-1780596672054
+Generated: 2026-06-04T18:11:12.142Z
+
+✓ PROVE FILE sample.txt → transcript/output/proofs/file-proof.json
+✓ PROVE MULTI → multi-file-proof-suite/output
+✓ PROVE FOLDER → folder-proof-audit/output
+✓ GENERATE EVIDENCE → aggregated evidence state observable
+✓ GENERATE REPORT → transcript/output/html/runtime-session-report.html
+✓ GENERATE CONTINUITY → transcript/output/continuity/continuity-session.json
+✓ OPEN SENTINEL → run npm run sentinel to view studio

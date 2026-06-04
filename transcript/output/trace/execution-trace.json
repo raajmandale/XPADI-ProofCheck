@@ -1,0 +1,47 @@
+{
+  "artifact": "TRANSCRIPT_EXECUTION_TRACE_V3",
+  "runtime": "TRANSCRIPT_RUNTIME_V3",
+  "session_id": "TRS-1780596672054",
+  "events": [
+    {
+      "step": 1,
+      "event": "✓ PROVE FILE sample.txt → transcript/output/proofs/file-proof.json",
+      "state": "completed"
+    },
+    {
+      "step": 2,
+      "event": "✓ PROVE MULTI → multi-file-proof-suite/output",
+      "state": "completed"
+    },
+    {
+      "step": 3,
+      "event": "✓ PROVE FOLDER → folder-proof-audit/output",
+      "state": "completed"
+    },
+    {
+      "step": 4,
+      "event": "✓ GENERATE EVIDENCE → aggregated evidence state observable",
+      "state": "completed"
+    },
+    {
+      "step": 5,
+      "event": "✓ GENERATE REPORT → transcript/output/html/runtime-session-report.html",
+      "state": "completed"
+    },
+    {
+      "step": 6,
+      "event": "✓ GENERATE CONTINUITY → transcript/output/continuity/continuity-session.json",
+      "state": "completed"
+    },
+    {
+      "step": 7,
+      "event": "✓ OPEN SENTINEL → run npm run sentinel to view studio",
+      "state": "completed"
+    }
+  ],
+  "graph": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\graph\\execution-graph.json",
+  "dependency_map": "C:\\Users\\Hp\\Desktop\\GitHUB-Projects\\XPADI - survivability\\xpadi-proofcheck-upgraded v2\\transcript\\output\\graph\\dependency-map.json",
+  "continuity": "observable",
+  "generated_at": "2026-06-04T18:11:12.145Z",
+  "boundary": "Trace is public-safe and does not expose XPADI private mechanisms."
+}

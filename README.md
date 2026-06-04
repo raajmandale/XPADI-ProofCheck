@@ -45,6 +45,52 @@ XPADI ProofCheck™ explores:
 - recovery readiness
 
 ---
+# 🧭 XPADI Public Surface Architecture
+
+XPADI ProofCheck™ V2 introduces three connected public surfaces.
+
+```txt
+Protection First
+        ↓
+Survival Second
+        ↓
+Recovery Third
+```
+
+These concepts are represented through:
+
+```txt
+XPADI ProofCheck™
+        ↓
+XPADI Sentinel Studio™
+        ↓
+XPADI Continuity Console™
+```
+
+### XPADI ProofCheck™
+
+Public survivability demonstration.
+
+Question:
+
+Can this data survive failure?
+
+### XPADI Sentinel Studio™
+
+Engineering intelligence surface.
+
+Question:
+
+Why was this survivability posture produced?
+
+### XPADI Continuity Console™
+
+Evidence exploration surface.
+
+Question:
+
+What continuity records support this conclusion?
+---
 
 # ⚡ Core Shift
 
@@ -101,15 +147,24 @@ Recovery posture fragile.
 
 ```txt
 xpadi-proofcheck/
+
+├── web-demo/
+│
+├── sentinel-studio/
+│
+├── proofcheck-console/
+│
+├── transcript/
 │
 ├── engine-rust/
+│
 ├── api-node/
-├── web-demo/
-├── surface-report/
-├── assets/
+│
 ├── docs/
-├── proof-output/
-└── README.md
+│
+├── assets/
+│
+└── release-assets/
 ```
 
 ---
@@ -368,7 +423,26 @@ It intentionally does NOT expose:
 - protected survivability architecture
 
 ---
+### 🧬 XPADI Direction
 
+XPADI is built around a simple progression:
+
+```txt
+Protection First
+        ↓
+Survival Second
+        ↓
+Recovery Third
+```
+
+Protection reduces exposure.
+
+Survival reduces destruction.
+
+Recovery restores continuity after failure.
+
+XPADI ProofCheck™ explores public-facing signals from this progression without exposing private XPADI internals.
+---
 # 🎯 Correct Positioning
 
 ✅ Recovery Intelligence & Survivability Proof

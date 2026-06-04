@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>TRANSCRIPT Runtime V4 — Execution Intelligence</title>
+<style>
+body{margin:0;background:#07111d;color:white;font-family:Segoe UI,Arial,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:54px 26px}
+.hero{border:1px solid rgba(255,155,69,.45);border-radius:30px;padding:34px;background:linear-gradient(135deg,#121f31,#07111d)}
+.tag{color:#ff9b45;font-size:13px;font-weight:900;letter-spacing:5px}
+h1{font-size:48px;margin:12px 0 8px}.sub{color:#cbd8e5;font-size:19px;line-height:1.5}
+.state{font-size:42px;color:#7dffb1;font-weight:900;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:24px}
+.card,.step{border:1px solid rgba(255,255,255,.12);border-radius:20px;background:#0d1928;padding:18px}
+.card h3{margin-top:0;color:#ffb067}
+.step{margin:10px 0}.step strong{display:block;color:#ffb067}.step span{color:#cbd8e5}
+table{width:100%;border-collapse:collapse;margin-top:14px;background:#0d1928;border-radius:18px;overflow:hidden}
+th,td{padding:14px;border-bottom:1px solid rgba(255,255,255,.1);text-align:left;vertical-align:top}
+th{color:#ffb067}
+.section{margin-top:38px}
+.flow{margin:26px 0;padding:18px;border-radius:18px;background:#0e1b2b;color:#ffb067;font-weight:900;font-size:22px;text-align:center}
+code{color:#ffb067}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="tag">TRANSCRIPT RUNTIME V4</div>
+<h1>Execution Intelligence Layer</h1>
+<div class="sub">Transcript now explains what happened, what was produced, what depends on it, and what remains observable as continuity.</div>
+<div class="state">CONTINUITY_READY</div>
+<div class="flow">INPUT → IDENTITY → INTEGRITY → EVIDENCE → OBSERVABILITY → CONTINUITY</div>
+<p><strong>Session:</strong> <code>TRS-1780596672054</code></p>
+</section>
+
+<section class="section">
+<h2>Consequence graph</h2>
+<table><thead><tr><th>From</th><th>To</th><th>Consequence</th></tr></thead><tbody>
+    <tr><td>module:PROVE_FILE</td><td>artifact:file-proof</td><td>creates file identity baseline</td></tr>
+  
+    <tr><td>artifact:file-proof</td><td>artifact:file-evidence</td><td>makes identity and integrity explainable</td></tr>
+  
+    <tr><td>artifact:file-evidence</td><td>artifact:file-report</td><td>makes result reviewable</td></tr>
+  
+    <tr><td>module:PROVE_MULTI</td><td>artifact:multi-suite</td><td>turns multiple files into a shared evidence baseline</td></tr>
+  
+    <tr><td>module:PROVE_FOLDER</td><td>artifact:folder-suite</td><td>turns a folder into an observable baseline</td></tr>
+  
+    <tr><td>artifact:file-proof</td><td>artifact:continuity-session</td><td>file proof contributes to continuity state</td></tr>
+  
+    <tr><td>artifact:multi-suite</td><td>artifact:continuity-session</td><td>multi-file proof contributes to continuity state</td></tr>
+  
+    <tr><td>artifact:folder-suite</td><td>artifact:continuity-session</td><td>folder audit contributes to continuity state</td></tr>
+  </tbody></table>
+</section>
+
+<section class="section">
+<h2>Artifact relationships</h2>
+<table><thead><tr><th>Source</th><th>Relation</th><th>Targets</th></tr></thead><tbody>
+    <tr><td>sample.txt</td><td>produces</td><td>file-proof.json, file-evidence.md, file-report.html</td></tr>
+  
+    <tr><td>multi-file-proof-suite/input</td><td>produces</td><td>suite-proof.json, suite-evidence.md, suite-report.html, suite-benchmark.json</td></tr>
+  
+    <tr><td>folder-proof-audit/input</td><td>produces</td><td>suite-proof.json, suite-evidence.md, suite-report.html, suite-benchmark.json</td></tr>
+  
+    <tr><td>proof + evidence + report outputs</td><td>supports</td><td>continuity-session.json, runtime-intelligence-report.html</td></tr>
+  </tbody></table>
+</section>
+
+<section class="section">
+<h2>Proof chain</h2>
+<div class="grid">
+    <div class="step"><strong>1. INPUT</strong><span>A file, file group, folder, or transcript request enters the public ProofCheck surface.</span></div>
+  
+    <div class="step"><strong>2. HASH</strong><span>SHA-256 creates a public identity baseline.</span></div>
+  
+    <div class="step"><strong>3. PROOF</strong><span>Proof JSON records the observable identity and integrity state.</span></div>
+  
+    <div class="step"><strong>4. EVIDENCE</strong><span>Markdown evidence translates the proof into human-readable form.</span></div>
+  
+    <div class="step"><strong>5. REPORT</strong><span>HTML report creates reviewable output.</span></div>
+  
+    <div class="step"><strong>6. CONTINUITY</strong><span>Continuity artifact records that evidence remains observable after execution.</span></div>
+  </div>
+</section>
+
+<section class="section">
+<h2>Continuity chain</h2>
+<div class="grid">
+    <div class="step"><strong>INPUT</strong><span>received → execution request</span></div>
+  
+    <div class="step"><strong>IDENTITY</strong><span>observable → hash baseline</span></div>
+  
+    <div class="step"><strong>INTEGRITY</strong><span>observable → proof record</span></div>
+  
+    <div class="step"><strong>EVIDENCE</strong><span>generated → markdown + json records</span></div>
+  
+    <div class="step"><strong>OBSERVABILITY</strong><span>reviewable → HTML report + logs</span></div>
+  
+    <div class="step"><strong>CONTINUITY</strong><span>ready → continuity session artifact</span></div>
+  </div>
+</section>
+</main>
+</body>
+</html>

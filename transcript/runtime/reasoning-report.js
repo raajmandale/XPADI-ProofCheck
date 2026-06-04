@@ -1,0 +1,51 @@
+const path = require("path");
+const { writeText } = require("./continuity-generator");
+
+function buildReasoningReport({ outputDir, reasoning }) {
+  const html = `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>XPADI Reasoning Engine V1</title>
+<style>
+body{margin:0;background:#07111d;color:white;font-family:Segoe UI,Arial,sans-serif}
+.wrap{max-width:1120px;margin:auto;padding:54px 26px}
+.hero{border:1px solid rgba(255,155,69,.45);border-radius:30px;padding:34px;background:linear-gradient(135deg,#121f31,#07111d)}
+.tag{color:#ff9b45;font-size:13px;font-weight:900;letter-spacing:5px}
+h1{font-size:48px;margin:12px 0 8px}.sub{color:#cbd8e5;font-size:19px;line-height:1.5}
+.state{font-size:52px;color:#7dffb1;font-weight:900;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:24px}
+.card{border:1px solid rgba(255,255,255,.12);border-radius:20px;background:#0d1928;padding:18px}
+.card h3{margin-top:0;color:#ffb067}.score{font-size:38px;color:#7dffb1;font-weight:900}
+.flow{margin:26px 0;padding:18px;border-radius:18px;background:#0e1b2b;color:#ffb067;font-weight:900;font-size:22px;text-align:center}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="tag">XPADI REASONING ENGINE V1</div>
+<h1>Public survivability reasoning</h1>
+<div class="sub">ProofCheck artifacts are interpreted into state, recoverability, confidence, and continuity meaning.</div>
+<div class="state">${reasoning.finalState.state}</div>
+<div class="flow">PROOF → EVIDENCE → REASONING → CONTINUITY → FINAL STATE</div>
+</section>
+<section class="grid">
+<div class="card"><h3>Recoverability</h3><div class="score">${reasoning.finalState.recoverability_score}%</div><p>${reasoning.recovery.recoverability}</p></div>
+<div class="card"><h3>Confidence</h3><div class="score">${reasoning.finalState.confidence_score}%</div><p>${reasoning.confidence.meaning}</p></div>
+<div class="card"><h3>Proof Strength</h3><div class="score">${reasoning.confidence.proof_strength}</div></div>
+<div class="card"><h3>Continuity Strength</h3><div class="score">${reasoning.confidence.continuity_strength}</div></div>
+</section>
+<section class="card" style="margin-top:28px">
+<h3>Human Meaning</h3>
+<p>${reasoning.recovery.meaning}</p>
+<p>Public boundary: no XPADI private mechanism is exposed.</p>
+</section>
+</main>
+</body>
+</html>`;
+  const reportPath = path.join(outputDir, "html", "reasoning-report-v1.html");
+  writeText(reportPath, html);
+  return reportPath;
+}
+
+module.exports = { buildReasoningReport };

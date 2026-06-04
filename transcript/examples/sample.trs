@@ -1,0 +1,10 @@
+# TRANSCRIPT_RUNTIME_V1 sample
+# Public-safe XPADI-ProofCheck execution surface
+
+PROVE FILE sample.txt
+
+GENERATE EVIDENCE
+
+GENERATE REPORT
+
+GENERATE CONTINUITY

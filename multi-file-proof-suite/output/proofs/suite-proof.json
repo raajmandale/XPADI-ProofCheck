@@ -1,0 +1,99 @@
+{
+  "artifact": "MULTI_FILE_PROOF_SUITE_V1",
+  "generated_at": "2026-06-04T18:11:12.089Z",
+  "input_directory": "multi-file-proof-suite/input",
+  "files": [
+    {
+      "name": "sample.json",
+      "extension": ".json",
+      "type": "structured-json",
+      "size_bytes": 124,
+      "sha256": "23c7206a9237a770da003979c54a41ed6ac4483e2ee02497fc2c840f37c96661",
+      "proof_id": "XPD-MF-JSON-23C7206A9237",
+      "status": "PUBLIC_PROOF_GENERATED",
+      "evidence_mode": "public-safe",
+      "continuity_signal": "observable",
+      "integrity_state": "hash-recorded",
+      "duration_ms": 1,
+      "disclosure_boundary": "No XPADI private mechanisms executed or disclosed."
+    },
+    {
+      "name": "sample.md",
+      "extension": ".md",
+      "type": "markdown-document",
+      "size_bytes": 87,
+      "sha256": "bca8ff99239ba7457d01cd873dc49bc8de203744064a493dd6009181aa3282aa",
+      "proof_id": "XPD-MF-MD-BCA8FF99239B",
+      "status": "PUBLIC_PROOF_GENERATED",
+      "evidence_mode": "public-safe",
+      "continuity_signal": "observable",
+      "integrity_state": "hash-recorded",
+      "duration_ms": 0,
+      "disclosure_boundary": "No XPADI private mechanisms executed or disclosed."
+    },
+    {
+      "name": "sample.pdf",
+      "extension": ".pdf",
+      "type": "portable-document",
+      "size_bytes": 307,
+      "sha256": "e6293672c7262074a7e50fb5b6453f3ede7fa5a06633f111fe5094b6229ce1b7",
+      "proof_id": "XPD-MF-PDF-E6293672C726",
+      "status": "PUBLIC_PROOF_GENERATED",
+      "evidence_mode": "public-safe",
+      "continuity_signal": "observable",
+      "integrity_state": "hash-recorded",
+      "duration_ms": 0,
+      "disclosure_boundary": "No XPADI private mechanisms executed or disclosed."
+    },
+    {
+      "name": "sample.png",
+      "extension": ".png",
+      "type": "image-asset",
+      "size_bytes": 68,
+      "sha256": "4b5c5c92cec3b23e6a294fc0eea43234ef5126c5a64f4c6c531ac8430ab0b844",
+      "proof_id": "XPD-MF-PNG-4B5C5C92CEC3",
+      "status": "PUBLIC_PROOF_GENERATED",
+      "evidence_mode": "public-safe",
+      "continuity_signal": "observable",
+      "integrity_state": "hash-recorded",
+      "duration_ms": 0,
+      "disclosure_boundary": "No XPADI private mechanisms executed or disclosed."
+    },
+    {
+      "name": "sample.txt",
+      "extension": ".txt",
+      "type": "text-document",
+      "size_bytes": 106,
+      "sha256": "a8706378e71deabb40ef9e13197a3c203e3b7c3759c1e5deba6a2ae526cb556f",
+      "proof_id": "XPD-MF-TXT-A8706378E71D",
+      "status": "PUBLIC_PROOF_GENERATED",
+      "evidence_mode": "public-safe",
+      "continuity_signal": "observable",
+      "integrity_state": "hash-recorded",
+      "duration_ms": 0,
+      "disclosure_boundary": "No XPADI private mechanisms executed or disclosed."
+    }
+  ],
+  "summary": {
+    "files_processed": 5,
+    "bytes_processed": 692,
+    "duration_ms": 4,
+    "hash_algorithm": "SHA-256",
+    "file_types": [
+      ".json",
+      ".md",
+      ".pdf",
+      ".png",
+      ".txt"
+    ],
+    "disclosure_mode": "PUBLIC_SAFE_SURFACE_ONLY",
+    "result": "MULTI_FILE_PUBLIC_PROOF_GENERATED"
+  },
+  "boundaries": [
+    "No Recovery Graph internals exposed.",
+    "No Authority Model internals exposed.",
+    "No Fragment Logic exposed.",
+    "No Reconstruction Engine exposed.",
+    "Only public file hashing, proof metadata, evidence markdown, and HTML reporting are demonstrated."
+  ]
+}

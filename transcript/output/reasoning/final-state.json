@@ -1,0 +1,12 @@
+{
+  "artifact": "XPADI_FINAL_REASONING_STATE_V1",
+  "session_id": "TRS-1780596672054",
+  "state": "SURVIVABLE",
+  "recoverability_score": 100,
+  "recoverability": "HIGH",
+  "confidence_score": 100,
+  "proof_strength": "HIGH",
+  "continuity_strength": "HIGH",
+  "public_boundary": "Reasoning uses public artifacts only. No XPADI private mechanisms exposed.",
+  "generated_at": "2026-06-04T18:11:12.152Z"
+}

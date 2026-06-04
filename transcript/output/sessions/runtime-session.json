@@ -1,0 +1,93 @@
+{
+  "session_id": "TRS-1780596672054",
+  "runtime": "TRANSCRIPT_RUNTIME_V3",
+  "events": [
+    "✓ PROVE FILE sample.txt → transcript/output/proofs/file-proof.json",
+    "✓ PROVE MULTI → multi-file-proof-suite/output",
+    "✓ PROVE FOLDER → folder-proof-audit/output",
+    "✓ GENERATE EVIDENCE → aggregated evidence state observable",
+    "✓ GENERATE REPORT → transcript/output/html/runtime-session-report.html",
+    "✓ GENERATE CONTINUITY → transcript/output/continuity/continuity-session.json",
+    "✓ OPEN SENTINEL → run npm run sentinel to view studio"
+  ],
+  "modules": [
+    {
+      "module": "PROVE_FILE",
+      "target": "sample.txt",
+      "status": "generated"
+    },
+    {
+      "module": "PROVE_MULTI",
+      "target": "multi-file-proof-suite/input",
+      "status": "generated",
+      "exitCode": 0
+    },
+    {
+      "module": "PROVE_FOLDER",
+      "target": "folder-proof-audit/input/sample-folder",
+      "status": "generated",
+      "exitCode": 0
+    },
+    {
+      "module": "GENERATE_EVIDENCE",
+      "status": "observable"
+    },
+    {
+      "module": "GENERATE_REPORT",
+      "status": "generated"
+    },
+    {
+      "module": "GENERATE_CONTINUITY",
+      "status": "generated"
+    },
+    {
+      "module": "OPEN_SENTINEL",
+      "status": "declared"
+    }
+  ],
+  "lineage": [
+    {
+      "from": "SESSION_START",
+      "to": "PROVE_FILE",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.058Z"
+    },
+    {
+      "from": "PROVE_FILE",
+      "to": "PROVE_MULTI",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.100Z"
+    },
+    {
+      "from": "PROVE_MULTI",
+      "to": "PROVE_FOLDER",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.141Z"
+    },
+    {
+      "from": "PROVE_FOLDER",
+      "to": "GENERATE_EVIDENCE",
+      "status": "observable",
+      "at": "2026-06-04T18:11:12.141Z"
+    },
+    {
+      "from": "GENERATE_EVIDENCE",
+      "to": "GENERATE_REPORT",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.141Z"
+    },
+    {
+      "from": "GENERATE_REPORT",
+      "to": "GENERATE_CONTINUITY",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.142Z"
+    },
+    {
+      "from": "GENERATE_CONTINUITY",
+      "to": "OPEN_SENTINEL",
+      "status": "declared",
+      "at": "2026-06-04T18:11:12.142Z"
+    }
+  ],
+  "sentinel": "available_at_http://localhost:8080"
+}

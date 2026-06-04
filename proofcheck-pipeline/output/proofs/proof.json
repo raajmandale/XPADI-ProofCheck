@@ -1,0 +1,33 @@
+{
+  "artifact": "REAL_PROOFCHECK_PIPELINE_V1",
+  "proof_id": "XPD-PROOF-02933503163F",
+  "generated_at": "2026-06-02T09:59:14.843Z",
+  "input": {
+    "file": "proofcheck-pipeline/input/sample.txt",
+    "name": "sample.txt",
+    "size_bytes": 266,
+    "line_count": 7,
+    "sha256": "02933503163f440fce7e1056a37ba8c172736e9213b2d98f96d33791fd59714a"
+  },
+  "observation": {
+    "status": "PUBLIC_PROOF_GENERATED",
+    "proof_type": "file-hash-evidence",
+    "evidence_mode": "public-safe",
+    "continuity_signal": "observable",
+    "integrity_state": "hash-recorded"
+  },
+  "benchmark": {
+    "duration_ms": 5,
+    "files_processed": 1,
+    "bytes_processed": 266,
+    "hash_algorithm": "SHA-256",
+    "disclosure_mode": "PUBLIC_SAFE_SURFACE_ONLY"
+  },
+  "boundaries": [
+    "No Recovery Graph internals exposed.",
+    "No Authority Model internals exposed.",
+    "No Fragment Logic exposed.",
+    "No Reconstruction Engine exposed.",
+    "Only public file hashing, proof metadata, evidence markdown, and HTML reporting are demonstrated."
+  ]
+}

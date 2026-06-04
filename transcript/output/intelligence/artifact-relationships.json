@@ -1,0 +1,47 @@
+{
+  "artifact": "TRANSCRIPT_ARTIFACT_RELATIONSHIPS_V4",
+  "runtime": "TRANSCRIPT_RUNTIME_V4",
+  "session_id": "TRS-1780596672054",
+  "root": "sample.txt",
+  "relationships": [
+    {
+      "source": "sample.txt",
+      "relation": "produces",
+      "targets": [
+        "file-proof.json",
+        "file-evidence.md",
+        "file-report.html"
+      ]
+    },
+    {
+      "source": "multi-file-proof-suite/input",
+      "relation": "produces",
+      "targets": [
+        "suite-proof.json",
+        "suite-evidence.md",
+        "suite-report.html",
+        "suite-benchmark.json"
+      ]
+    },
+    {
+      "source": "folder-proof-audit/input",
+      "relation": "produces",
+      "targets": [
+        "suite-proof.json",
+        "suite-evidence.md",
+        "suite-report.html",
+        "suite-benchmark.json"
+      ]
+    },
+    {
+      "source": "proof + evidence + report outputs",
+      "relation": "supports",
+      "targets": [
+        "continuity-session.json",
+        "runtime-intelligence-report.html"
+      ]
+    }
+  ],
+  "public_boundary": "Artifact relationships describe output lineage only.",
+  "generated_at": "2026-06-04T18:11:12.148Z"
+}

@@ -1,0 +1,15 @@
+{
+  "artifact": "REAL_PROOFCHECK_PIPELINE_V1_BENCHMARK",
+  "generated_at": "2026-06-02T09:59:14.843Z",
+  "files_processed": 1,
+  "bytes_processed": 266,
+  "duration_ms": 5,
+  "hash_algorithm": "SHA-256",
+  "output_files": [
+    "proofcheck-pipeline/output/proofs/proof.json",
+    "proofcheck-pipeline/output/evidence/evidence.md",
+    "proofcheck-pipeline/output/html/report.html",
+    "proofcheck-pipeline/output/benchmarks/benchmark.json"
+  ],
+  "disclosure_mode": "PUBLIC_SAFE_SURFACE_ONLY"
+}

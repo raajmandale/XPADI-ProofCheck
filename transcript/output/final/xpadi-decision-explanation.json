@@ -1,0 +1,45 @@
+{
+  "artifact": "XPADI_DECISION_EXPLAINER_V1",
+  "decision": "SAFE",
+  "risk": "LOW",
+  "composite_score": 98,
+  "explanation": "The public evidence chain passed validation and supports a safe demonstration posture.",
+  "recommendation": "Safe for public demonstration, repository presentation, and continuity validation review.",
+  "strongest_signals": [
+    "Recoverability",
+    "Confidence",
+    "Proof Integrity",
+    "Continuity"
+  ],
+  "review_signals": [],
+  "validation_failures": [],
+  "validation_warnings": [],
+  "factors": [
+    {
+      "name": "Recoverability",
+      "score": 100,
+      "weight": "32%",
+      "meaning": "How strongly the public evidence supports recoverability posture."
+    },
+    {
+      "name": "Confidence",
+      "score": 100,
+      "weight": "28%",
+      "meaning": "How consistent the reasoning layer is across available public artifacts."
+    },
+    {
+      "name": "Proof Integrity",
+      "score": 96,
+      "weight": "20%",
+      "meaning": "How complete the proof chain appears from public ProofCheck outputs."
+    },
+    {
+      "name": "Continuity",
+      "score": 96,
+      "weight": "20%",
+      "meaning": "How complete the continuity chain appears from public ProofCheck outputs."
+    }
+  ],
+  "public_boundary": "Explanation is based only on public ProofCheck artifacts and deterministic validation. No XPADI private mechanisms are disclosed.",
+  "generated_at": "2026-06-04T18:11:12.155Z"
+}

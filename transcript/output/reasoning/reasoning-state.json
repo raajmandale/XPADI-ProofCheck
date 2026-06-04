@@ -1,0 +1,12 @@
+{
+  "artifact": "XPADI_REASONING_STATE_V1",
+  "session_id": "TRS-1780596672054",
+  "classification": {
+    "state": "SURVIVABLE",
+    "proof_count": 6,
+    "continuity_count": 6,
+    "relationship_count": 4,
+    "consequence_count": 8,
+    "runtime_state": "CONTINUITY_READY"
+  }
+}

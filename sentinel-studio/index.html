@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>XPADI-ProofCheck — Recovery Intelligence Demo</title>
+<link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<main class="shell">
+
+<section class="hero public-hero">
+  <div class="hero-copy">
+    <div class="eyebrow">XPADI-PROOFCHECK™</div>
+    <h1>Recovery Intelligence Demonstration</h1>
+    <p>XPADI-ProofCheck explores whether recovery confidence, evidence confidence, and continuity confidence can be evaluated before failure occurs.</p>
+    <div class="hero-actions">
+      <a href="../transcript/output/final/xpadi-final-report.html" target="_blank">Open Final Report</a>
+      <a href="../transcript/output/html/runtime-intelligence-report-v4.html" target="_blank">Runtime Report</a>
+      <a href="../transcript/output/html/reasoning-report-v1.html" target="_blank">Reasoning Report</a>
+    </div>
+  </div>
+  <div class="status-orb"><span id="decisionOrb">SAFE</span></div>
+</section>
+
+<section class="grid measure-grid">
+  <article class="card measure-card">
+    <div class="label">What XPADI Measures</div>
+    <h2>Recovery Confidence</h2>
+    <p>Can recovery plausibly occur from available public evidence?</p>
+  </article>
+  <article class="card measure-card">
+    <div class="label">What XPADI Measures</div>
+    <h2>Evidence Confidence</h2>
+    <p>Can recovery claims be supported by generated proof artifacts?</p>
+  </article>
+  <article class="card measure-card">
+    <div class="label">What XPADI Measures</div>
+    <h2>Continuity Confidence</h2>
+    <p>Can the system show continuity signals after a failure scenario?</p>
+  </article>
+</section>
+
+<section class="card scenario-card">
+  <div class="section-head">
+    <div>
+      <div class="label">Failure Scenario</div>
+      <h2>Select a public scenario</h2>
+      <p id="scenarioMeaning">Deletion tests whether a recovery posture remains explainable after expected data loss.</p>
+    </div>
+    <select id="scenario">
+      <option value="deletion">Deletion</option>
+      <option value="corruption">Corruption</option>
+      <option value="ransomware">Ransomware</option>
+      <option value="credential-loss">Credential Loss</option>
+      <option value="device-loss">Device Loss</option>
+    </select>
+  </div>
+</section>
+
+<section class="grid top-grid">
+  <article class="card decision-card">
+    <div class="label">Final Decision</div>
+    <div class="big" id="decision">SAFE</div>
+    <div class="subline" id="risk">Risk: LOW</div>
+  </article>
+
+  <article class="card">
+    <div class="label">Composite Score</div>
+    <div class="big" id="score">98%</div>
+    <div class="subline">Public decision confidence</div>
+  </article>
+
+  <article class="card">
+    <div class="label">Validation</div>
+    <div class="big" id="validation">SAFE</div>
+    <div class="subline" id="validationCounts">PASS 10 · WARN 0 · FAIL 0</div>
+  </article>
+
+  <article class="card">
+    <div class="label">Continuity</div>
+    <div class="big" id="continuity">96%</div>
+    <div class="subline">Continuity chain strength</div>
+  </article>
+</section>
+
+<section class="card flow-card">
+  <div class="section-head">
+    <div>
+      <div class="label">Runtime Flow</div>
+      <h2>Input to public decision</h2>
+    </div>
+  </div>
+  <div class="flow">
+    <span>INPUT</span><b></b><span>PROOF</span><b></b><span>EVIDENCE</span><b></b><span>INTELLIGENCE</span><b></b><span>REASONING</span><b></b><span>VALIDATION</span><b></b><span>DECISION</span>
+  </div>
+</section>
+
+<section class="grid two-grid">
+  <article class="card">
+    <div class="section-head">
+      <div>
+        <div class="label">Reasoning Board</div>
+        <h2 id="reasoningState">SURVIVABLE</h2>
+      </div>
+    </div>
+    <div class="metric-row"><span>Recoverability</span><strong id="recoverability">100%</strong></div>
+    <div class="metric-row"><span>Confidence</span><strong id="confidence">100%</strong></div>
+    <div class="metric-row"><span>Proof Integrity</span><strong id="proofIntegrity">96%</strong></div>
+  </article>
+
+  <article class="card">
+    <div class="section-head">
+      <div>
+        <div class="label">Human Explanation</div>
+        <h2>Why this decision?</h2>
+      </div>
+    </div>
+    <p class="meaning" id="explanation">Loading XPADI runtime decision...</p>
+    <div class="chips" id="signals"></div>
+  </article>
+</section>
+
+<section class="grid two-grid">
+  <article class="card">
+    <div class="section-head">
+      <div>
+        <div class="label">Validation Checks</div>
+        <h2>PASS / WARN / FAIL</h2>
+      </div>
+    </div>
+    <div id="checks" class="checks"></div>
+  </article>
+
+  <article class="card">
+    <div class="section-head">
+      <div>
+        <div class="label">Generated Package</div>
+        <h2>Public artifacts</h2>
+      </div>
+    </div>
+    <div class="artifact-list">
+      <a href="../transcript/output/final/xpadi-final-decision.json" target="_blank">xpadi-final-decision.json</a>
+      <a href="../transcript/output/final/xpadi-validation.json" target="_blank">xpadi-validation.json</a>
+      <a href="../transcript/output/final/xpadi-decision-explanation.json" target="_blank">xpadi-decision-explanation.json</a>
+      <a href="../transcript/output/final/xpadi-final-report.html" target="_blank">xpadi-final-report.html</a>
+    </div>
+  </article>
+</section>
+
+<section class="card boundary-card">
+  <div class="label">Public Boundary</div>
+  <p>XPADI-ProofCheck is not antivirus, EDR, backup software, or a recovery guarantee system. This demo shows public recovery-intelligence signals generated from the current ProofCheck runtime.</p>
+</section>
+
+<footer>
+  XPADI-ProofCheck public demo mode. No private XPADI authority, reconstruction, recovery, crypto, or survivability internals are exposed.
+</footer>
+
+</main>
+<script src="./app.js"></script>
+</body>
+</html>

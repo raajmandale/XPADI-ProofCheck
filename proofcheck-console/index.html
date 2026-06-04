@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XPADI Sentinel™ — Continuity Console</title>
+
+<style>
+:root{
+--bg:#04101d;
+--panel:#0d2338;
+--line:#1d4c75;
+--text:#eef8ff;
+--muted:#9fd0f6;
+--hot:#ff9b4a;
+--good:#55ff9a;
+--blue:#38bdf8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,Segoe UI,Arial,sans-serif;
+background:linear-gradient(135deg,#020812,#0a2945);
+color:var(--text);
+}
+
+.app{
+display:grid;
+grid-template-columns:300px 1fr;
+min-height:100vh;
+}
+
+.side{
+background:#04101d;
+border-right:1px solid var(--line);
+padding:24px;
+}
+
+.brand{
+display:flex;
+gap:16px;
+align-items:center;
+margin-bottom:24px;
+}
+
+.orb{
+width:54px;
+height:54px;
+border-radius:50%;
+background:linear-gradient(135deg,#38bdf8,#fb923c);
+}
+
+.brand h1{
+font-size:22px;
+margin-bottom:4px;
+}
+
+.brand p{
+color:var(--muted);
+}
+
+.surface-nav{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-bottom:30px;
+}
+
+.surface-nav a{
+text-decoration:none;
+padding:14px 16px;
+border-radius:14px;
+border:1px solid var(--line);
+background:#0d2a45;
+color:var(--text);
+font-weight:700;
+}
+
+.surface-nav a.active{
+border-color:var(--blue);
+box-shadow:0 0 0 2px rgba(56,189,248,.2);
+}
+
+.nav{
+margin-top:10px;
+}
+
+.nav button{
+width:100%;
+display:block;
+text-align:left;
+padding:16px 18px;
+margin-bottom:10px;
+border-radius:14px;
+border:1px solid var(--line);
+background:#0d2a45;
+color:white;
+font-weight:700;
+cursor:pointer;
+}
+
+.nav button.active{
+border-color:var(--blue);
+box-shadow:0 0 0 2px rgba(56,189,248,.2);
+}
+
+.main{
+padding:48px;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+gap:40px;
+margin-bottom:30px;
+}
+
+.eyebrow{
+letter-spacing:.35em;
+font-size:12px;
+font-weight:900;
+color:var(--hot);
+margin-bottom:12px;
+}
+
+.hero h2{
+font-size:68px;
+line-height:.95;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+line-height:1.6;
+max-width:900px;
+color:var(--muted);
+}
+
+.signal{
+width:320px;
+background:rgba(13,35,56,.9);
+border:1px solid var(--line);
+border-radius:24px;
+padding:28px;
+}
+
+.signal span{
+font-size:20px;
+color:var(--muted);
+}
+
+.signal strong{
+display:block;
+font-size:42px;
+color:var(--good);
+margin-top:20px;
+}
+
+.panel{
+background:rgba(13,35,56,.85);
+border:1px solid var(--line);
+border-radius:24px;
+padding:30px;
+margin-bottom:24px;
+}
+
+.panel h2{
+margin-bottom:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.card{
+background:#102f4d;
+border:1px solid var(--line);
+border-radius:18px;
+padding:22px;
+}
+
+.card span{
+color:var(--muted);
+}
+
+.card strong{
+display:block;
+font-size:36px;
+color:var(--good);
+margin:14px 0;
+}
+
+.view{
+display:none;
+}
+
+.view.active{
+display:block;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+text-align:left;
+padding:14px;
+color:var(--hot);
+border-bottom:1px solid var(--line);
+}
+
+td{
+padding:14px;
+border-bottom:1px solid var(--line);
+}
+
+.shotgrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.shot{
+background:#06172a;
+border:1px solid var(--line);
+border-radius:16px;
+padding:14px;
+}
+
+.shot img{
+width:100%;
+border-radius:10px;
+display:block;
+}
+
+.shot p{
+margin-top:10px;
+font-weight:700;
+color:var(--hot);
+}
+
+.footer-note{
+margin-top:20px;
+color:var(--muted);
+font-size:14px;
+}
+
+@media(max-width:1100px){
+
+.app{
+grid-template-columns:1fr;
+}
+
+.side{
+border-right:none;
+border-bottom:1px solid var(--line);
+}
+
+.hero{
+flex-direction:column;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.shotgrid{
+grid-template-columns:1fr;
+}
+
+.hero h2{
+font-size:48px;
+}
+
+.signal{
+width:100%;
+}
+
+.main{
+padding:24px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="side">
+
+<div class="brand">
+<div class="orb"></div>
+
+<div>
+<h1>XPADI Sentinel™</h1>
+<p>Continuity Console</p>
+</div>
+</div>
+
+<div class="surface-nav">
+<a href="../web-demo/index.html">ProofCheck</a>
+<a href="../sentinel-studio/index.html">Sentinel Studio</a>
+<a class="active" href="../proofcheck-console/index.html">Continuity Console</a>
+</div>
+
+<div class="nav">
+<button class="active" data-view="dashboard">Dashboard</button>
+<button data-view="assets">Asset Explorer</button>
+<button data-view="timeline">Event Timeline</button>
+<button data-view="meaning">Meaning Layer</button>
+<button data-view="reports">Report Center</button>
+<button data-view="continuity">Continuity View</button>
+<button data-view="evidence">Technical Evidence</button>
+</div>
+
+</aside>
+
+<main class="main">
+
+<section class="hero">
+
+<div>
+
+<div class="eyebrow">
+PUBLIC-SAFE CONTINUITY INTELLIGENCE SOFTWARE
+</div>
+
+<h2>
+Evidence for what must survive.
+</h2>
+
+<p>
+Files and folders become observable baselines:
+identity, integrity, evidence, reports and continuity meaning —
+without exposing XPADI core mechanisms.
+</p>
+
+</div>
+
+<div class="signal">
+<span>Continuity Signal</span>
+<strong>ACTIVE<br>BASELINE</strong>
+<p class="footer-note">
+Private XPADI internals remain hidden.
+</p>
+</div>
+
+</section>
+
+<section id="dashboard" class="view active">
+
+<div class="panel">
+
+<h2>Continuity Command Center</h2>
+
+<div class="cards">
+
+<div class="card">
+<span>Protected Assets</span>
+<strong>15</strong>
+<p>files/folders observed</p>
+</div>
+
+<div class="card">
+<span>Evidence Records</span>
+<strong>19</strong>
+<p>proof objects generated</p>
+</div>
+
+<div class="card">
+<span>Observed Bytes</span>
+<strong>1650</strong>
+<p>hashed locally</p>
+</div>
+
+<div class="card">
+<span>System Posture</span>
+<strong>ACTIVE</strong>
+<p>public baseline state</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="assets" class="view">
+<div class="panel">
+<h2>Asset Explorer</h2>
+
+<table>
+<tr>
+<th>Asset</th>
+<th>Type</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>sample.txt</td>
+<td>File</td>
+<td>Protected baseline</td>
+</tr>
+
+<tr>
+<td>multi-file-suite</td>
+<td>Folder</td>
+<td>Evidence set</td>
+</tr>
+
+<tr>
+<td>folder-proof-audit</td>
+<td>Folder</td>
+<td>Continuity audit</td>
+</tr>
+</table>
+
+</div>
+</section>
+
+<section id="timeline" class="view">
+<div class="panel">
+<h2>Event Timeline</h2>
+<p>Input → Identity → Integrity → Evidence → Observability → Continuity.</p>
+</div>
+</section>
+
+<section id="meaning" class="view">
+<div class="panel">
+<h2>Meaning Layer</h2>
+<p>
+Public artifacts are translated into operational meaning:
+what exists, what is observable,
+and what remains explainable after failure.
+</p>
+</div>
+</section>
+
+<section id="reports" class="view">
+<div class="panel">
+<h2>Report Center</h2>
+
+<p>
+<a href="../transcript/output/final/xpadi-final-report.html">Final Report</a>
+<br><br>
+<a href="../transcript/output/html/runtime-intelligence-report-v4.html">Runtime Intelligence</a>
+<br><br>
+<a href="../transcript/output/html/reasoning-report-v1.html">Reasoning Report</a>
+</p>
+
+</div>
+</section>
+
+<section id="continuity" class="view">
+<div class="panel">
+<h2>Continuity View</h2>
+<p>
+Shows how evidence links into a public continuity baseline.
+</p>
+</div>
+</section>
+
+<section id="evidence" class="view">
+
+<div class="panel">
+
+<h2>Technical Evidence</h2>
+
+<div class="shotgrid">
+
+<div class="shot">
+<img src="../release-assets/screenshots/01-dashboard.png">
+<p>Dashboard</p>
+</div>
+
+<div class="shot">
+<img src="../release-assets/screenshots/02-asset-explorer.png">
+<p>Asset Explorer</p>
+</div>
+
+<div class="shot">
+<img src="../release-assets/screenshots/03-event-timeline.png">
+<p>Event Timeline</p>
+</div>
+
+<div class="shot">
+<img src="../release-assets/screenshots/07-technical-evidence.png">
+<p>Technical Evidence</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+
+document.querySelectorAll('.nav button').forEach(btn=>{
+
+btn.addEventListener('click',()=>{
+
+document.querySelectorAll('.nav button')
+.forEach(b=>b.classList.remove('active'));
+
+document.querySelectorAll('.view')
+.forEach(v=>v.classList.remove('active'));
+
+btn.classList.add('active');
+
+document
+.getElementById(btn.dataset.view)
+.classList.add('active');
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

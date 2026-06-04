@@ -1,0 +1,71 @@
+{
+  "artifact": "TRANSCRIPT_CONTINUITY_SESSION_V3",
+  "runtime": "TRANSCRIPT_RUNTIME_V3",
+  "session_id": "TRS-1780596672054",
+  "commands_executed": 5,
+  "modules": [
+    {
+      "module": "PROVE_FILE",
+      "target": "sample.txt",
+      "status": "generated"
+    },
+    {
+      "module": "PROVE_MULTI",
+      "target": "multi-file-proof-suite/input",
+      "status": "generated",
+      "exitCode": 0
+    },
+    {
+      "module": "PROVE_FOLDER",
+      "target": "folder-proof-audit/input/sample-folder",
+      "status": "generated",
+      "exitCode": 0
+    },
+    {
+      "module": "GENERATE_EVIDENCE",
+      "status": "observable"
+    },
+    {
+      "module": "GENERATE_REPORT",
+      "status": "generated"
+    }
+  ],
+  "lineage": [
+    {
+      "from": "SESSION_START",
+      "to": "PROVE_FILE",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.058Z"
+    },
+    {
+      "from": "PROVE_FILE",
+      "to": "PROVE_MULTI",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.100Z"
+    },
+    {
+      "from": "PROVE_MULTI",
+      "to": "PROVE_FOLDER",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.141Z"
+    },
+    {
+      "from": "PROVE_FOLDER",
+      "to": "GENERATE_EVIDENCE",
+      "status": "observable",
+      "at": "2026-06-04T18:11:12.141Z"
+    },
+    {
+      "from": "GENERATE_EVIDENCE",
+      "to": "GENERATE_REPORT",
+      "status": "generated",
+      "at": "2026-06-04T18:11:12.141Z"
+    }
+  ],
+  "proof": "generated",
+  "evidence": "observable",
+  "continuity": "observable",
+  "sentinel": "not_opened",
+  "public_boundary": "Public execution surface only. No XPADI private mechanisms exposed.",
+  "generated_at": "2026-06-04T18:11:12.142Z"
+}

@@ -1,0 +1,22 @@
+{
+  "artifact": "MULTI_FILE_PROOF_SUITE_V1_BENCHMARK",
+  "generated_at": "2026-06-04T18:11:12.138Z",
+  "files_processed": 5,
+  "bytes_processed": 692,
+  "duration_ms": 4,
+  "hash_algorithm": "SHA-256",
+  "file_types": [
+    ".json",
+    ".md",
+    ".pdf",
+    ".png",
+    ".txt"
+  ],
+  "outputs": [
+    "multi-file-proof-suite/output/proofs/suite-proof.json",
+    "multi-file-proof-suite/output/evidence/suite-evidence.md",
+    "multi-file-proof-suite/output/html/suite-report.html",
+    "multi-file-proof-suite/output/benchmarks/suite-benchmark.json"
+  ],
+  "disclosure_mode": "PUBLIC_SAFE_SURFACE_ONLY"
+}

@@ -1,0 +1,28 @@
+{
+  "artifact": "XPADI_FINAL_DECISION_V1",
+  "session_id": "TRS-1780596672054",
+  "decision": "SAFE",
+  "risk": "LOW",
+  "decision": "REVIEW",
+"composite_score": 42,
+  "composite_score": 98,
+  "recoverability": 100,
+  "confidence": 100,
+  "proof_integrity": 96,
+  "continuity": 96,
+  "validation_state": "SAFE",
+  "validation_summary": {
+    "total_checks": 10,
+    "pass": 10,
+    "warn": 0,
+    "fail": 0,
+    "proof_chain_count": 6,
+    "continuity_chain_count": 6,
+    "reasoning_confidence": 100,
+    "recoverability_score": 100
+  },
+  "runtime_state": "CONTINUITY_READY",
+  "human_meaning": "The public evidence chain passed validation and supports a safe demonstration posture.",
+  "public_boundary": "Decision uses public ProofCheck validation artifacts only. No XPADI private mechanisms exposed.",
+  "generated_at": "2026-06-04T18:11:12.155Z"
+}

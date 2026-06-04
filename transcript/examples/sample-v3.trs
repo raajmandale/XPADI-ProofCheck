@@ -1,0 +1,16 @@
+# TRANSCRIPT_RUNTIME_V3 sample
+# Execution graph + lineage + dependency map + trace
+
+PROVE FILE sample.txt
+
+PROVE MULTI
+
+PROVE FOLDER
+
+GENERATE EVIDENCE
+
+GENERATE REPORT
+
+GENERATE CONTINUITY
+
+OPEN SENTINEL

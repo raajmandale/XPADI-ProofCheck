@@ -1,0 +1,64 @@
+{
+  "artifact": "TRANSCRIPT_DEPENDENCY_MAP_V3",
+  "runtime": "TRANSCRIPT_RUNTIME_V3",
+  "session_id": "TRS-1780596672054",
+  "modules": [
+    {
+      "module": "PROVE_FILE",
+      "depends_on": [
+        "proofcheck-pipeline input"
+      ],
+      "produces": [
+        "file-proof.json",
+        "file-evidence.md",
+        "file-report.html"
+      ]
+    },
+    {
+      "module": "PROVE_MULTI",
+      "depends_on": [
+        "multi-file-proof-suite"
+      ],
+      "produces": [
+        "suite-proof.json",
+        "suite-evidence.md",
+        "suite-report.html",
+        "suite-benchmark.json"
+      ]
+    },
+    {
+      "module": "PROVE_FOLDER",
+      "depends_on": [
+        "folder-proof-audit"
+      ],
+      "produces": [
+        "suite-proof.json",
+        "suite-evidence.md",
+        "suite-report.html",
+        "suite-benchmark.json"
+      ]
+    },
+    {
+      "module": "GENERATE_CONTINUITY",
+      "depends_on": [
+        "proof outputs",
+        "evidence outputs",
+        "report outputs"
+      ],
+      "produces": [
+        "continuity-session.json"
+      ]
+    },
+    {
+      "module": "OPEN_SENTINEL",
+      "depends_on": [
+        "sentinel-studio"
+      ],
+      "produces": [
+        "localhost:8080 instruction"
+      ]
+    }
+  ],
+  "boundary": "Dependency map describes public module relationships only.",
+  "generated_at": "2026-06-04T18:11:12.145Z"
+}

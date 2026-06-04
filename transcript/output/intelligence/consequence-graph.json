@@ -1,0 +1,137 @@
+{
+  "artifact": "TRANSCRIPT_CONSEQUENCE_GRAPH_V4",
+  "runtime": "TRANSCRIPT_RUNTIME_V4",
+  "session_id": "TRS-1780596672054",
+  "summary": "Maps runtime modules to the public consequences they produce.",
+  "nodes": [
+    {
+      "id": "module:PROVE_FILE",
+      "kind": "runtime_module",
+      "label": "PROVE_FILE",
+      "status": "generated",
+      "target": "sample.txt"
+    },
+    {
+      "id": "artifact:file-proof",
+      "kind": "proof_artifact",
+      "label": "file-proof.json",
+      "status": "generated"
+    },
+    {
+      "id": "artifact:file-evidence",
+      "kind": "evidence_artifact",
+      "label": "file-evidence.md",
+      "status": "generated"
+    },
+    {
+      "id": "artifact:file-report",
+      "kind": "report_artifact",
+      "label": "file-report.html",
+      "status": "generated"
+    },
+    {
+      "id": "module:PROVE_MULTI",
+      "kind": "runtime_module",
+      "label": "PROVE_MULTI",
+      "status": "generated",
+      "target": "multi-file-proof-suite/input"
+    },
+    {
+      "id": "artifact:multi-suite",
+      "kind": "proof_suite",
+      "label": "multi-file output suite",
+      "status": "generated"
+    },
+    {
+      "id": "module:PROVE_FOLDER",
+      "kind": "runtime_module",
+      "label": "PROVE_FOLDER",
+      "status": "generated",
+      "target": "folder-proof-audit/input/sample-folder"
+    },
+    {
+      "id": "artifact:folder-suite",
+      "kind": "folder_audit",
+      "label": "folder audit output suite",
+      "status": "generated"
+    },
+    {
+      "id": "module:GENERATE_EVIDENCE",
+      "kind": "runtime_module",
+      "label": "GENERATE_EVIDENCE",
+      "status": "observable",
+      "target": null
+    },
+    {
+      "id": "module:GENERATE_REPORT",
+      "kind": "runtime_module",
+      "label": "GENERATE_REPORT",
+      "status": "generated",
+      "target": null
+    },
+    {
+      "id": "module:GENERATE_CONTINUITY",
+      "kind": "runtime_module",
+      "label": "GENERATE_CONTINUITY",
+      "status": "generated",
+      "target": null
+    },
+    {
+      "id": "artifact:continuity-session",
+      "kind": "continuity_artifact",
+      "label": "continuity-session.json",
+      "status": "generated"
+    },
+    {
+      "id": "module:OPEN_SENTINEL",
+      "kind": "runtime_module",
+      "label": "OPEN_SENTINEL",
+      "status": "declared",
+      "target": null
+    }
+  ],
+  "edges": [
+    {
+      "from": "module:PROVE_FILE",
+      "to": "artifact:file-proof",
+      "consequence": "creates file identity baseline"
+    },
+    {
+      "from": "artifact:file-proof",
+      "to": "artifact:file-evidence",
+      "consequence": "makes identity and integrity explainable"
+    },
+    {
+      "from": "artifact:file-evidence",
+      "to": "artifact:file-report",
+      "consequence": "makes result reviewable"
+    },
+    {
+      "from": "module:PROVE_MULTI",
+      "to": "artifact:multi-suite",
+      "consequence": "turns multiple files into a shared evidence baseline"
+    },
+    {
+      "from": "module:PROVE_FOLDER",
+      "to": "artifact:folder-suite",
+      "consequence": "turns a folder into an observable baseline"
+    },
+    {
+      "from": "artifact:file-proof",
+      "to": "artifact:continuity-session",
+      "consequence": "file proof contributes to continuity state"
+    },
+    {
+      "from": "artifact:multi-suite",
+      "to": "artifact:continuity-session",
+      "consequence": "multi-file proof contributes to continuity state"
+    },
+    {
+      "from": "artifact:folder-suite",
+      "to": "artifact:continuity-session",
+      "consequence": "folder audit contributes to continuity state"
+    }
+  ],
+  "public_boundary": "Public consequence model only. No XPADI private mechanisms exposed.",
+  "generated_at": "2026-06-04T18:11:12.146Z"
+}

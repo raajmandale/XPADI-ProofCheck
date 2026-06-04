@@ -1,0 +1,40 @@
+{
+  "artifact": "TRANSCRIPT_CONTINUITY_CHAIN_V4",
+  "runtime": "TRANSCRIPT_RUNTIME_V4",
+  "session_id": "TRS-1780596672054",
+  "chain": [
+    {
+      "stage": "INPUT",
+      "state": "received",
+      "survives_as": "execution request"
+    },
+    {
+      "stage": "IDENTITY",
+      "state": "observable",
+      "survives_as": "hash baseline"
+    },
+    {
+      "stage": "INTEGRITY",
+      "state": "observable",
+      "survives_as": "proof record"
+    },
+    {
+      "stage": "EVIDENCE",
+      "state": "generated",
+      "survives_as": "markdown + json records"
+    },
+    {
+      "stage": "OBSERVABILITY",
+      "state": "reviewable",
+      "survives_as": "HTML report + logs"
+    },
+    {
+      "stage": "CONTINUITY",
+      "state": "ready",
+      "survives_as": "continuity session artifact"
+    }
+  ],
+  "result": "CONTINUITY_READY",
+  "public_boundary": "Continuity chain is a public result chain, not XPADI private recovery logic.",
+  "generated_at": "2026-06-04T18:11:12.150Z"
+}

@@ -1,0 +1,5 @@
+{
+  "artifact": "XPADI_MULTI_FILE_SAMPLE",
+  "purpose": "public-safe proof generation",
+  "boundary": "no XPADI internals"
+}

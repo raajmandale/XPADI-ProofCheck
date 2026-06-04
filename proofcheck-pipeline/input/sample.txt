@@ -1,0 +1,6 @@
+XPADI ProofCheck Artifact-2 Sample
+
+This file is used as a public-safe input for demonstrating real file hashing, evidence generation, and proof reporting without exposing XPADI internal mechanisms.
+
+Attack ≠ Data Loss.
+Survivability requires observable evidence.

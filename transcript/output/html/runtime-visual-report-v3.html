@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>TRANSCRIPT Runtime V3 — Execution Orchestration</title>
+<style>
+  body{margin:0;background:#07111d;color:white;font-family:Segoe UI,Arial,sans-serif}
+  .wrap{max-width:1180px;margin:auto;padding:54px 26px}
+  .hero{border:1px solid rgba(255,155,69,.42);border-radius:30px;padding:34px;background:linear-gradient(135deg,#111d2e,#07111d)}
+  .tag{color:#ff9b45;font-size:13px;font-weight:900;letter-spacing:5px}
+  h1{font-size:48px;margin:12px 0 8px}
+  .sub{color:#cbd8e5;font-size:20px;line-height:1.5}
+  .flow{margin:30px 0;padding:18px;border-radius:18px;background:#0e1b2b;color:#ffb067;font-weight:900;font-size:22px;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:24px}
+  .node,.module{border:1px solid rgba(255,255,255,.12);border-radius:20px;background:#0d1928;padding:18px}
+  .step{color:#ff9b45;font-size:12px;font-weight:900;letter-spacing:3px}
+  .type,.module-title{font-size:20px;font-weight:900;margin:8px 0;color:white}
+  .raw{color:#aabbd0}
+  .status{margin-top:12px;color:#7dffb1;font-weight:900}
+  .section{margin-top:38px}
+  code{color:#ffb067;word-break:break-all}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <div class="tag">TRANSCRIPT RUNTIME V3</div>
+    <h1>Execution orchestration layer</h1>
+    <div class="sub">A .trs file now produces an execution graph, session lineage, dependency map, execution trace, and continuity report across public ProofCheck modules.</div>
+    <div class="flow">TRS → COMMAND GRAPH → MODULE EXECUTION → TRACE → CONTINUITY</div>
+    <p><strong>Session:</strong> <code>TRS-1780596672054</code></p>
+  </section>
+
+  <section class="section">
+    <h2>Execution graph</h2>
+    <div class="grid">
+    <div class="node">
+      <div class="step">STEP 1</div>
+      <div class="type">PROVE FILE</div>
+      <div class="raw">PROVE FILE sample.txt</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  
+    <div class="node">
+      <div class="step">STEP 2</div>
+      <div class="type">PROVE MULTI</div>
+      <div class="raw">PROVE MULTI</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  
+    <div class="node">
+      <div class="step">STEP 3</div>
+      <div class="type">PROVE FOLDER</div>
+      <div class="raw">PROVE FOLDER</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  
+    <div class="node">
+      <div class="step">STEP 4</div>
+      <div class="type">GENERATE EVIDENCE</div>
+      <div class="raw">GENERATE EVIDENCE</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  
+    <div class="node">
+      <div class="step">STEP 5</div>
+      <div class="type">GENERATE REPORT</div>
+      <div class="raw">GENERATE REPORT</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  
+    <div class="node">
+      <div class="step">STEP 6</div>
+      <div class="type">GENERATE CONTINUITY</div>
+      <div class="raw">GENERATE CONTINUITY</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  
+    <div class="node">
+      <div class="step">STEP 7</div>
+      <div class="type">OPEN SENTINEL</div>
+      <div class="raw">OPEN SENTINEL</div>
+      <div class="status">EXECUTED</div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section">
+    <h2>Runtime dependency map</h2>
+    <div class="grid">
+    <div class="module">
+      <div class="module-title">PROVE FILE</div>
+      <div><strong>Depends on:</strong> proofcheck-pipeline input</div>
+      <div><strong>Produces:</strong> file-proof.json, file-evidence.md, file-report.html</div>
+    </div>
+  
+    <div class="module">
+      <div class="module-title">PROVE MULTI</div>
+      <div><strong>Depends on:</strong> multi-file-proof-suite</div>
+      <div><strong>Produces:</strong> suite-proof.json, suite-evidence.md, suite-report.html, suite-benchmark.json</div>
+    </div>
+  
+    <div class="module">
+      <div class="module-title">PROVE FOLDER</div>
+      <div><strong>Depends on:</strong> folder-proof-audit</div>
+      <div><strong>Produces:</strong> suite-proof.json, suite-evidence.md, suite-report.html, suite-benchmark.json</div>
+    </div>
+  
+    <div class="module">
+      <div class="module-title">GENERATE CONTINUITY</div>
+      <div><strong>Depends on:</strong> proof outputs, evidence outputs, report outputs</div>
+      <div><strong>Produces:</strong> continuity-session.json</div>
+    </div>
+  
+    <div class="module">
+      <div class="module-title">OPEN SENTINEL</div>
+      <div><strong>Depends on:</strong> sentinel-studio</div>
+      <div><strong>Produces:</strong> localhost:8080 instruction</div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section">
+    <h2>Trace artifact</h2>
+    <p><code>C:\Users\Hp\Desktop\GitHUB-Projects\XPADI - survivability\xpadi-proofcheck-upgraded v2\transcript\output\trace\execution-trace.json</code></p>
+  </section>
+</main>
+</body>
+</html>

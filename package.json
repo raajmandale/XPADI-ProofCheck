@@ -2,12 +2,31 @@
   "name": "xpadi-proofcheck-workspace",
   "version": "0.1.0",
   "private": true,
-  "description": "XPADI ProofCheck workspace: Rust engine, Node API, local web demo",
+  "description": "XPADI ProofCheck public validation and recovery intelligence surface",
+
   "scripts": {
     "api": "cd api-node && npm start",
+
     "proof:sample": "cd engine-rust && cargo run -- proof ../examples/sample.txt --out ../reports/sample.xpadi-proof.json",
+
     "verify:sample": "cd engine-rust && cargo run -- verify ../examples/sample.txt ../reports/sample.xpadi-proof.json",
-    "start:api": "cd api-node && npm install && npm start"
+
+    "start:api": "cd api-node && npm install && npm start",
+
+    "transcript:show": "node -e \"const fs=require('fs'); for (const f of fs.readdirSync('transcript/examples')) console.log('--- ' + f + ' ---\\n' + fs.readFileSync('transcript/examples/'+f,'utf8'))\"",
+
+    "transcript:proof": "node transcript/demo/src/transcript-proof-demo.js",
+
+    "proofcheck:pipeline": "node proofcheck-pipeline/src/proofcheck-pipeline.js",
+
+    "proofcheck:multi": "node multi-file-proof-suite/src/multi-file-proof-suite.js",
+
+    "proofcheck:folder": "node folder-proof-audit/src/folder-proof-audit.js",
+
+    "sentinel": "node sentinel-studio/server/sentinel-server.js",
+
+    "trs": "node transcript/runtime/transcript-runtime.js"
   },
-  "phase": "PHASE-2 Recovery Intelligence Surface"
+
+  "phase": "PUBLIC_RELEASE_V2"
 }

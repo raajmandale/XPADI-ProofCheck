@@ -1,0 +1,12 @@
+{
+  "artifact": "TRANSCRIPT_PROOF_RECORD_V1",
+  "runtime": "TRANSCRIPT_RUNTIME_V1",
+  "target": "proofcheck-pipeline/input/sample.txt",
+  "file_name": "sample.txt",
+  "size_bytes": 266,
+  "hash_algorithm": "SHA-256",
+  "sha256": "02933503163f440fce7e1056a37ba8c172736e9213b2d98f96d33791fd59714a",
+  "proof_state": "PUBLIC_PROOF_GENERATED",
+  "generated_at": "2026-06-02T13:10:54.975Z",
+  "public_boundary": "Proof record only. No XPADI private mechanism exposed."
+}

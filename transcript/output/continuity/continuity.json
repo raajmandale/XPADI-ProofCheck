@@ -1,0 +1,15 @@
+{
+  "artifact": "TRANSCRIPT_CONTINUITY_ARTIFACT_V1",
+  "runtime": "TRANSCRIPT_RUNTIME_V1",
+  "target": "proofcheck-pipeline/input/sample.txt",
+  "hash_algorithm": "SHA-256",
+  "file_sha256": "02933503163f440fce7e1056a37ba8c172736e9213b2d98f96d33791fd59714a",
+  "proof": "generated",
+  "evidence": "generated",
+  "report": "generated",
+  "identity": "observable",
+  "integrity": "observable",
+  "continuity": "observable",
+  "public_boundary": "No XPADI private mechanisms exposed.",
+  "generated_at": "2026-06-02T13:10:54.979Z"
+}

@@ -1,0 +1,23 @@
+{
+  "artifact": "TRANSCRIPT_RUNTIME_STATE_V4",
+  "runtime": "TRANSCRIPT_RUNTIME_V4",
+  "session_id": "TRS-1780596672054",
+  "state": "CONTINUITY_READY",
+  "state_path": [
+    "CREATED",
+    "OBSERVED",
+    "PROVEN",
+    "EVIDENCED",
+    "REVIEW_READY",
+    "CONTINUITY_READY"
+  ],
+  "current_capabilities": {
+    "identity": "observable",
+    "integrity": "observable",
+    "evidence": "generated",
+    "report": "generated",
+    "continuity": "observable"
+  },
+  "public_boundary": "Runtime state is deterministic and public-safe.",
+  "generated_at": "2026-06-04T18:11:12.149Z"
+}

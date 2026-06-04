@@ -1,0 +1,8 @@
+{
+  "artifact": "XPADI_RECOVERY_ANALYSIS_V1",
+  "recoverability_score": 100,
+  "recoverability": "HIGH",
+  "classification": "SURVIVABLE",
+  "evidence_sources": 24,
+  "meaning": "Evidence, continuity, and relationship artifacts support a strong public survivability posture."
+}

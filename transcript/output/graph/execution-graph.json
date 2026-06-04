@@ -1,0 +1,91 @@
+{
+  "artifact": "TRANSCRIPT_EXECUTION_GRAPH_V3",
+  "runtime": "TRANSCRIPT_RUNTIME_V3",
+  "session_id": "TRS-1780596672054",
+  "graph_type": "public_execution_lineage",
+  "nodes": [
+    {
+      "id": "01_PROVE_FILE",
+      "type": "PROVE_FILE",
+      "raw": "PROVE FILE sample.txt",
+      "sourceLine": 1,
+      "status": "executed"
+    },
+    {
+      "id": "02_PROVE_MULTI",
+      "type": "PROVE_MULTI",
+      "raw": "PROVE MULTI",
+      "sourceLine": 2,
+      "status": "executed"
+    },
+    {
+      "id": "03_PROVE_FOLDER",
+      "type": "PROVE_FOLDER",
+      "raw": "PROVE FOLDER",
+      "sourceLine": 3,
+      "status": "executed"
+    },
+    {
+      "id": "04_GENERATE_EVIDENCE",
+      "type": "GENERATE_EVIDENCE",
+      "raw": "GENERATE EVIDENCE",
+      "sourceLine": 4,
+      "status": "executed"
+    },
+    {
+      "id": "05_GENERATE_REPORT",
+      "type": "GENERATE_REPORT",
+      "raw": "GENERATE REPORT",
+      "sourceLine": 5,
+      "status": "executed"
+    },
+    {
+      "id": "06_GENERATE_CONTINUITY",
+      "type": "GENERATE_CONTINUITY",
+      "raw": "GENERATE CONTINUITY",
+      "sourceLine": 6,
+      "status": "executed"
+    },
+    {
+      "id": "07_OPEN_SENTINEL",
+      "type": "OPEN_SENTINEL",
+      "raw": "OPEN SENTINEL",
+      "sourceLine": 7,
+      "status": "executed"
+    }
+  ],
+  "edges": [
+    {
+      "from": "01_PROVE_FILE",
+      "to": "02_PROVE_MULTI",
+      "relation": "sequence"
+    },
+    {
+      "from": "02_PROVE_MULTI",
+      "to": "03_PROVE_FOLDER",
+      "relation": "sequence"
+    },
+    {
+      "from": "03_PROVE_FOLDER",
+      "to": "04_GENERATE_EVIDENCE",
+      "relation": "sequence"
+    },
+    {
+      "from": "04_GENERATE_EVIDENCE",
+      "to": "05_GENERATE_REPORT",
+      "relation": "sequence"
+    },
+    {
+      "from": "05_GENERATE_REPORT",
+      "to": "06_GENERATE_CONTINUITY",
+      "relation": "sequence"
+    },
+    {
+      "from": "06_GENERATE_CONTINUITY",
+      "to": "07_OPEN_SENTINEL",
+      "relation": "sequence"
+    }
+  ],
+  "generated_at": "2026-06-04T18:11:12.144Z",
+  "boundary": "Public execution graph only. No XPADI private mechanisms exposed."
+}
