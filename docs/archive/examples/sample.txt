@@ -1,0 +1,2 @@
+XPADI ProofCheck sample payload.
+This file exists to test recovery-readiness proof generation.

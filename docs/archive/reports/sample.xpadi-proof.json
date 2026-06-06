@@ -1,0 +1,38 @@
+{
+  "proof_version": "XPADI-PC-V0.1-SAMPLE",
+  "proof_id": "XPADI-PC-20260506-SAMPLE",
+  "created_at": "2026-05-06T00:00:00Z",
+  "subject": {
+    "subject_type": "file",
+    "name": "sample.txt",
+    "relative_path": "examples/sample.txt",
+    "size_bytes": 91,
+    "file_count": 1
+  },
+  "integrity": {
+    "algorithm": "BLAKE3",
+    "digest": "sample-digest-generated-by-engine",
+    "status": "VERIFIED_AT_CREATION"
+  },
+  "survivability": {
+    "recovery_readiness": 19,
+    "continuity_confidence": 25,
+    "single_point_dependency": "HIGH",
+    "reconstruction_readiness": "LOW",
+    "fragment_survivability": "LOW",
+    "recovery_complexity": "LOW",
+    "posture": "FRAGILE_RECOVERY_POSTURE"
+  },
+  "fragment_profile": {
+    "simulated_fragment_count": 1,
+    "simulated_fragment_size_bytes": 65536,
+    "entropy_signal": "LOW_SAMPLE",
+    "diversity_signal": "SINGLE_OBJECT_DOMINANT",
+    "manifest_mode": "SIMULATED_PUBLIC_SAFE"
+  },
+  "notes": [
+    "Public-safe proof surface only; not a recovery engine.",
+    "Recovery Readiness estimates survivability posture, not guaranteed restoration.",
+    "Checksums prove change; ProofCheck asks whether data is structurally ready to survive failure."
+  ]
+}
